@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import View
-from registration.forms import LoginForm
+from registration.forms import SignUpForm
 from random import randint
 from registration.models import User
 
@@ -12,20 +12,23 @@ class LoginClassView(View):
 
 class SignUpClassView(View):
     def get(self, request, *args, **kwargs):
-        form = LoginForm()
+        form = SignUpForm()
         context = {
             "form": form
         }
         return render(request, 'sign-up.html', context)
     
-    def post(self, request, *args, **kwargs):
-        form = LoginForm(request.POST)
+    def post(self, request, password, *args, **kwargs):
+        form = SignUpForm(request.POST)
         if form.is_valid():
             sms_code = randint(100000,999999)
             print(sms_code)
             phone = form.cleaned_data['phone']
             print(phone)
-            user = User.objects.create_user(phone=phone, password='')
+            default_password = ''
+            if password:
+                default_password = password
+            user = User.objects.create_user(phone=phone, password=default_password)
             print(form.cleaned_data['phone'])
             print(form.cleaned_data['password'])
             return HttpResponse('<h1>done</h1>')

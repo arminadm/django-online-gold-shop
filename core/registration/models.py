@@ -1,17 +1,28 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
-from django.contrib.auth.models import User
 
 # Create your models here.
 class CustomUserManager(BaseUserManager):
     """
     this class will make normal and superuser users
     """
+
     def create_user(self, phone, password, **extra_fields):
+        """
+        create user with '' password
+        """
         if not phone:
             raise ValueError('You must provide a phone number')
         user = self.model(phone=phone, **extra_fields)
-        User.set_unusable_password(self)
+
+        # if we are creating superuser we need to provide a password for admin panel
+        if extra_fields.get('is_superuser') is True:   
+            user.set_password(password)
+
+        # if we are creating normal user we don't need to provide a password
+        else:
+            user.set_unusable_password()
+
         user.save()
         return user
     
@@ -36,6 +47,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     password is going to be generated and set each time user logs in or sign up for the first time
     """
     phone = models.CharField(max_length=15, unique=True, blank=False, null=False)
+    sms_verification = models.CharField(max_length=6) # change each time that user logs in or signup for first time
+    sms_verification_expire_time = models.DateTimeField(blank=True, null=True) # needed to check how much time has passed since user got new sms_verification code
     is_superuser = models.BooleanField(default=False, null=False, blank=False) # have access to control everything
     is_staff = models.BooleanField(default=False, null=False, blank=False) # have access to log into admin panel
     is_active = models.BooleanField(default=False, null=False, blank=False) # have access to log into site
