@@ -49,12 +49,24 @@ class User(AbstractBaseUser, PermissionsMixin):
     password is going to be generated and set each time user logs in or sign up for the first time
     """
     phone = models.CharField(max_length=15, unique=True, blank=False, null=False)
-    sms_verification = models.CharField(max_length=6) # change each time that user logs in or signup for first time
-    sms_verification_expire_time = models.DateTimeField(blank=True, null=True) # needed to check how much time has passed since user got new sms_verification code
-    is_superuser = models.BooleanField(default=False, null=False, blank=False) # have access to control everything
-    is_staff = models.BooleanField(default=False, null=False, blank=False) # have access to log into admin panel
-    is_active = models.BooleanField(default=False, null=False, blank=False) # have access to log into site
-    is_verified = models.BooleanField(default=False, null=False, blank=False) # after sms verification will be set to True
+    # change each time that user logs in or signup for first time
+    sms_verification = models.CharField(max_length=6)
+
+    # needed to check how much time has passed since user got new sms_verification code
+    sms_verification_expire_time = models.DateTimeField(blank=True, null=True) 
+    
+    # have access to control everything
+    is_superuser = models.BooleanField(default=False, null=False, blank=False)
+    
+    # have access to log into admin panel 
+    is_staff = models.BooleanField(default=False, null=False, blank=False) 
+    
+    # have access to log into site
+    is_active = models.BooleanField(default=False, null=False, blank=False) 
+    
+    # after sms verification will be set to True
+    is_verified = models.BooleanField(default=False, null=False, blank=False) 
+    
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
@@ -83,5 +95,4 @@ class Profile(models.Model):
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
     if created:
-        print('i reached here')
         Profile.objects.create(user=instance)
