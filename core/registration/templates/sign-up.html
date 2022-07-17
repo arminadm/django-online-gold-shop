@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login</title>
+	<title>Sign Up</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -32,21 +32,23 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="/registration/sign-up/" method="post">
+					{% csrf_token %} 
 					<span class="login100-form-title p-b-70">
-						Login
+						Sign Up
 					</span>
+					<!-- {{form.as_p}} -->
 					<span class="login100-form-avatar">
 						<img src="/static/images/avatar-01.jpg" alt="AVATAR">
 					</span>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter phone_number">
-						<input class="input100" type="text" name="phone_number">
+						<input class="input100" type="text" name="phone">
 						<span class="focus-input100" data-placeholder="phone number"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Enter sms_code">
-						<input class="input100" type="password" name="sms_code">
+						<input class="input100" type="text" name="password">
 						<span class="focus-input100" data-placeholder="sms code"></span>
 					</div>
 

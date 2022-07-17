@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
-
+from django.contrib.auth.models import User
 
 # Create your models here.
 class CustomUserManager(BaseUserManager):
@@ -11,7 +11,7 @@ class CustomUserManager(BaseUserManager):
         if not phone:
             raise ValueError('You must provide a phone number')
         user = self.model(phone=phone, **extra_fields)
-        user.set_password(password)
+        User.set_unusable_password(self)
         user.save()
         return user
     
@@ -35,7 +35,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     note: we dont need to add password model field, AbstractBaseUser already did that for us
     password is going to be generated and set each time user logs in or sign up for the first time
     """
-    phone = models.IntegerField(unique=True, blank=False, null=False)
+    phone = models.CharField(max_length=15, unique=True, blank=False, null=False)
     is_superuser = models.BooleanField(default=False, null=False, blank=False) # have access to control everything
     is_staff = models.BooleanField(default=False, null=False, blank=False) # have access to log into admin panel
     is_active = models.BooleanField(default=False, null=False, blank=False) # have access to log into site
