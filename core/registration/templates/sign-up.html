@@ -35,7 +35,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
-				<form class="login100-form validate-form" action="registration/sign-up" method="post">
+				<form class="login100-form validate-form" action="/registration/sign-up/" method="post">
 					{% csrf_token %}
 					<span class="login100-form-title p-b-70">
 						Sign Up
@@ -100,6 +100,7 @@
 								alert('sms verification sent successfully');
 								btn.innerText = 'Enter code and register';
 								codeInput.classList.remove('dis-none');
+								btn.setAttribute('disabled', 'disabled');
 								step = 2;
 							},
 							error: function (response) {
@@ -107,31 +108,34 @@
 							}
 						});
 					}
-					// function sendCode() {
-					// 	$.ajax({
-					// 		type: 'POST',
-					// 		url: '/registration/sign-up/',
-					// 		data: {
-					// 			phone: $('#phone').val(),
-					// 			sms_code: $('#sms_code').val(),
-					// 			csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
-					// 		},
-					// 		success: function (response) {
-					// 			location.href = '/'
-					// 		},
-					// 		error: function (response) {
-					// 			alert('failed to verify phone number');
-					// 		}
-					// 	});
-					// }
+					function checkValidity(e) {
+						const val = e.target.value;
+						if (val.trim().length === 6) {
+							$.ajax({
+								type: 'POST',
+								url: '/registration/validate_sms_code/',
+								data: {
+									phone: $('#phone').val(),
+									code: val,
+									csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+								},
+								success: function (response) {
+									btn.removeAttribute('disabled');
+								},
+								// error: function (response) {
+								// 	alert('failed to verify phone number');
+								// }
+							});
+						}
+					}
 					btn.onclick = function (e) {
-						// if (step === 2) {
-							// sendCode();
-						// } else {
+						if (step === 1) {
 							e.preventDefault();
 							sendVerification();
-						// }
-					};   
+						}
+					};
+					codeInput.addEventListener('keyup', checkValidity)
+
 				</script>
 			</div>
 		</div>
