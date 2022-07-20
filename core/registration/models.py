@@ -75,6 +75,10 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     objects = CustomUserManager()
 
+    class Meta: 
+        verbose_name = "کاربر"
+        verbose_name_plural = "کاربران"
+
     def __str__(self):
         return f"{self.id} - {self.phone}"
 
@@ -88,6 +92,10 @@ class Profile(models.Model):
     email = models.EmailField(blank=True, null=True)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
+
+    class Meta: 
+        verbose_name = "پروفایل کاربر"
+        verbose_name_plural = "پروفایل کاربران"
 
     def __str__(self):
         return f"{self.user.id} - {self.user.phone} - {self.first_name} - {self.last_name}"
