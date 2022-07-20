@@ -1,9 +1,9 @@
 from django.http import Http404, HttpResponse, JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import View
 from registration.forms import ProfileForm, SignUpForm
 from registration.models import Profile, User
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 
 # Create your views here.
 class LoginClassView(View):
@@ -51,9 +51,8 @@ class SignUpClassView(View):
             # log user in and redirect it to user profile page to complete their information
             login(request, user)
 
-            # TODO: if user is verified redirect to index page
             # TODO: if user is not verified redirect to profile-edit page
-            return HttpResponse('<h1>done</h1>')
+            return redirect('/registration/profile-edit')
 
 class ProfileClassView(View):
     def get(self, request, *args, **kwargs):
@@ -61,7 +60,7 @@ class ProfileClassView(View):
         context = {
             'form': form
         }
-        return render(request, 'profile.html', context=context)
+        return render(request, 'profile-edit.html', context=context)
 
     def post(self, request, *args, **kwargs):
         form = ProfileForm(request.POST)
@@ -78,3 +77,13 @@ class ProfileClassView(View):
         else:
             # TODO: redirect to change-profile with error message
             return HttpResponse('<h1>Form didnt submit</h1>')
+
+
+class LogoutClassView(View):
+    def get(self, request, *args, **kwargs):
+        # user must be logged in to have access to this page
+        if not request.user.is_authenticated:
+            # TODO: redirect to bad request page
+            return HttpResponse('Unauthorized', status=401)
+        logout(request)
+        return HttpResponse('successfully logged out')

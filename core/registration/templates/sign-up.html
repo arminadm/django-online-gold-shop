@@ -91,7 +91,7 @@
 					function sendVerification() {
 						$.ajax({
 							type: 'POST',
-							url: '/registration/send_sms_verification/',
+							url: '/registration/send_signup_sms_verification/',
 							data: {
 								phone: $('#phone').val(),
 								csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
