@@ -87,7 +87,7 @@ class Profile(models.Model):
     birth_date = models.DateTimeField(blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
     created_date = models.DateTimeField(auto_now_add=True)
-    update_date = models.DateTimeField(auto_now=True)
+    updated_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"{self.user.id} - {self.user.phone} - {self.first_name} - {self.last_name}"
