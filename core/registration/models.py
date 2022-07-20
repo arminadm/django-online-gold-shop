@@ -80,7 +80,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 class Profile(models.Model):
     # we can have access to phone number via user foreign key
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=255, blank=True, null=True)
     last_name = models.CharField(max_length=255, blank=True, null=True)
     national_code = models.CharField(max_length=10, unique=True, blank=True, null=True)
