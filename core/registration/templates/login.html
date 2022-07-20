@@ -1,58 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="/static/images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="/static/vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="/static/vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/static/css/util.css">
-	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="/static/login-logout/images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/login-logout/vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/login-logout/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/login-logout/fonts/iconic/css/material-design-iconic-font.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/login-logout/vendor/animate/animate.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/login-logout/vendor/css-hamburgers/hamburgers.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/login-logout/vendor/animsition/css/animsition.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/login-logout/vendor/select2/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/login-logout/vendor/daterangepicker/daterangepicker.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/login-logout/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/login-logout/css/main.css">
+	<!--===============================================================================================-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
+
 <body>
-	
+
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="/registration/login/" method="post">
+					{% csrf_token %}
 					<span class="login100-form-title p-b-70">
 						Login
 					</span>
 					<span class="login100-form-avatar">
-						<img src="/static/images/avatar-01.jpg" alt="AVATAR">
+						<img src="/static/login-logout/images/avatar-01.jpg" alt="AVATAR">
 					</span>
 
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter phone_number">
-						<input class="input100" type="text" name="phone_number">
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate="Enter phone_number"
+						id="sms_code_input">
+						<input class="input100" type="text" name="phone" id="phone">
 						<span class="focus-input100" data-placeholder="phone number"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-50" data-validate="Enter sms_code">
-						<input class="input100" type="password" name="sms_code">
+					<div class="dis-none wrap-input100 validate-input m-b-50" id="codeInput"
+						data-validate="Enter sms_code">
+						<input class="input100" type="text" name="password">
 						<span class="focus-input100" data-placeholder="sms code"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Login
+						<button class="login100-form-btn" id="submit-button">
+							send sms verification
 						</button>
 					</div>
 
@@ -78,29 +84,83 @@
 						</li>
 					</ul>
 				</form>
+				<script>
+					const btn = document.getElementById('submit-button');
+					const codeInput = document.getElementById('codeInput');
+					let step = 1;
+					function sendVerification() {
+						$.ajax({
+							type: 'POST',
+							url: '/registration/send_login_sms_verification/',
+							data: {
+								phone: $('#phone').val(),
+								csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+							},
+							success: function (response) {
+								alert('sms verification sent successfully');
+								btn.innerText = 'Enter code and register';
+								codeInput.classList.remove('dis-none');
+								btn.setAttribute('disabled', 'disabled');
+								step = 2;
+							},
+							error: function (response) {
+								alert('phone number is not registered');
+							}
+						});
+					}
+					function checkValidity(e) {
+						const val = e.target.value;
+						if (val.trim().length === 6) {
+							$.ajax({
+								type: 'POST',
+								url: '/registration/validate_sms_code/',
+								data: {
+									phone: $('#phone').val(),
+									code: val,
+									csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+								},
+								success: function (response) {
+									btn.removeAttribute('disabled');
+								},
+								// error: function (response) {
+								// 	alert('failed to verify phone number');
+								// }
+							});
+						}
+					}
+					btn.onclick = function (e) {
+						if (step === 1) {
+							e.preventDefault();
+							sendVerification();
+						}
+					};
+					codeInput.addEventListener('keyup', checkValidity)
+
+				</script>
 			</div>
 		</div>
 	</div>
-	
+
 
 	<div id="dropDownSelect1"></div>
-	
-<!--===============================================================================================-->
-	<script src="/static/vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="/static/vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="/static/vendor/bootstrap/js/popper.js"></script>
-	<script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="/static/vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="/static/vendor/daterangepicker/moment.min.js"></script>
-	<script src="/static/vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="/static/vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="/static/js/main.js"></script>
+
+	<!--===============================================================================================-->
+	<script src="/static/login-logout/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/static/login-logout/vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/static/login-logout/vendor/bootstrap/js/popper.js"></script>
+	<script src="/static/login-logout/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/static/login-logout/vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/static/login-logout/vendor/daterangepicker/moment.min.js"></script>
+	<script src="/static/login-logout/vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="/static/login-logout/vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+	<script src="/static/login-logout/js/main.js"></script>
 
 </body>
+
 </html>

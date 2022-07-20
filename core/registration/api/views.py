@@ -4,20 +4,19 @@ from registration.models import User
 from random import randint
 from datetime import datetime
 
-class SendSMSVerification(View):
+class SendSignupSMSVerification(View):
     def post(self, request, *args, **kwargs):
         phone = request.POST.get('phone')
         if phone:
             # check if phone is already registered
             if User.objects.filter(phone=phone).exists():
                 return JsonResponse({"error": "phone already registered"})
-
-            sms_code = randint(100000,999999)
             
             # TODO: send sms
+            sms_code = randint(100000,999999)
             print(f"sms_code: {sms_code}")
             
-            # We need to store sms_code and it's submit time in registration/login via post method
+            # We need to store sms_code and it's submit time
             sms_code_generated_time = str(datetime.now())
             request.session['phone'] = phone
             request.session['sms_code'] = sms_code
@@ -68,3 +67,28 @@ class ValidateSMSCode(View):
 
         # validation completed and there is no error
         return JsonResponse({'success': True}, status=200)
+
+class SendLoginSMSVerification(View):
+    def post(self, request, *args, **kwargs):
+        phone = request.POST.get('phone')
+        if phone:
+            # check if phone is registered
+            try:
+                user = User.objects.get(phone=phone)
+            except User.DoesNotExist:
+                return JsonResponse({"error": "phone is not registered"}, status=400)
+
+            # TODO: send sms
+            sms_code = randint(100000,999999)
+            print(f"sms_code: {sms_code}")
+            
+            # We need to store sms_code and it's submit time
+            sms_code_generated_time = str(datetime.now())
+            request.session['phone'] = phone
+            request.session['sms_code'] = sms_code
+            request.session['sms_code_generated_time'] = sms_code_generated_time
+            
+            return JsonResponse({"success": True})
+        
+        else: # phone does not exists
+            return JsonResponse({"error": "Phone is required."})
