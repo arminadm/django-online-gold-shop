@@ -14,14 +14,16 @@ class SendSignupSMSVerification(View):
             
             # TODO: send sms
             sms_code = randint(100000,999999)
+            sms_code_generated_time = str(datetime.now())
             print(f"sms_code: {sms_code}")
             
             # We need to store sms_code and it's submit time
-            sms_code_generated_time = str(datetime.now())
-            request.session['phone'] = phone
-            request.session['sms_code'] = sms_code
-            request.session['sms_code_generated_time'] = sms_code_generated_time
+            # TODO: switch to data base
+            # request.session['phone'] = phone
+            # request.session['sms_code'] = sms_code
+            # request.session['sms_code_generated_time'] = sms_code_generated_time
             
+
             return JsonResponse({"success": True})
 
         else: # phone does not exists

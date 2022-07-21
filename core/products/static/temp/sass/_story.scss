@@ -1,0 +1,210 @@
+.story {
+  section {
+    .story-intro {
+      margin-top: 100px;
+      position: relative;
+
+      .intro-img {
+        width: 100%;
+        padding-right: 100px;
+      }
+      .bottom-squre {
+        position: absolute;
+        bottom: -90px;
+        right: 120px;
+      }
+      .intro-item {
+        .top-squre {
+          position: absolute;
+          z-index: 1;
+          left: 300px;
+          top: 250px;
+        }
+        .story-introduction {
+          background-color: $story-box;
+          padding: 40px 60px;
+          position: absolute;
+          left: 250px;
+          width: 600px;
+          bottom: 200px;
+        }
+        .logo {
+          position: absolute;
+          width: 340px;
+          bottom: 120px;
+        }
+      }
+      .intro-icon {
+        position: absolute;
+        margin: 0 auto;
+        right: 0;
+        left: 0;
+        bottom: -250px;
+      }
+    }
+    .story-information {
+      margin-top: 320px;
+      padding: 160px 0 200px;
+      background-image: url("../images/story-bg.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      h3 {
+        margin: 0 0 30px;
+        color: $secondery-color;
+        font-weight: 800;
+      }
+      p {
+        width: 600px;
+        margin: 0 auto;
+      }
+      .down-icon {
+        position: absolute;
+        top: 15px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+      }
+      .circle {
+        position: absolute;
+        top: -31.5px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        z-index: -1;
+      }
+      .number {
+        margin-top: 50px;
+      }
+      .poco {
+        position: absolute;
+        left: 230px;
+        bottom: -137px;
+      }
+    }
+    .story-details {
+      position: relative;
+
+      padding-bottom: 60px;
+      .center-line {
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        top: -350px;
+      }
+      .rectangle-1 {
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        top: -350px;
+      }
+      .rectangle-2 {
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        top: 235px;
+      }
+      .rectangle-3 {
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        top: 735px;
+      }
+      .rectangle-4 {
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        top: 1245px;
+      }
+      .rectangle-5 {
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        top: 1735px;
+      }
+      .details-item {
+        margin-top: 250px;
+        .text {
+          padding-right: 45px;
+          padding-left: 170px;
+          p {
+            text-align: justify;
+            margin-top: 25px;
+          }
+        }
+      }
+    }
+    .announced-section {
+      background-color: $story-box;
+      position: relative;
+      margin-top: 200px;
+      img {
+        width: 100%;
+      }
+      .announced-item {
+        padding: 0 80px;
+        .icon {
+          position: absolute;
+          top: -90px;
+          right: 180px;
+          width: auto;
+        }
+        h3 {
+          margin-bottom: 20px;
+        }
+        p {
+          text-align: justify;
+        }
+      }
+    }
+    .question-section {
+      margin: 100px auto;
+      width: 60%;
+      h3 {
+        margin-bottom: 30px;
+      }
+      .accordion-item {
+        background-color: $primary-color;
+        border-radius: 10px;
+        margin-bottom: 2px;
+        .accordion-header {
+          .accordion-button {
+            border-radius: 10px;
+            box-shadow: 0px 7px 6px -5px rgb(106, 106, 106);
+            display: flex;
+            justify-content: space-between;
+            padding: 25px 45px;
+            img {
+              width: 25px;
+            }
+
+            &::after {
+              display: none;
+            }
+            &:focus {
+              box-shadow: 0px 7px 6px -5px rgb(106, 106, 106);
+            }
+            &:not(.collapsed) {
+              color: #000;
+              background-color: #fff;
+              img {
+                transform: rotate(45deg);
+              }
+            }
+          }
+        }
+        .accordion-body {
+          padding: 40px 60px;
+          line-height: 25px;
+        }
+      }
+    }
+  }
+}

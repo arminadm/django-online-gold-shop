@@ -1,0 +1,84 @@
+.collection-page {
+  section {
+    .present-intro {
+      padding: 160px 0 120px;
+      background-image: url("../images/img.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      .intro-text {
+        width: 600px;
+        margin: 40px auto 0;
+        h3 {
+          margin: 0 0 30px;
+          color: $H-text-color;
+        }
+        p {
+          color: $H-text-color;
+          text-align: center;
+        }
+      }
+    }
+    .present-section {
+      margin-top: 120px;
+      img {
+        width: 90%;
+      }
+      .box {
+        width: 85%;
+        span {
+          display: block;
+          color: $H-text-color;
+          font-size: 25px;
+          font-weight: 600;
+          margin-bottom: 25px;
+        }
+        p {
+          margin-bottom: 30px;
+          text-align: justify;
+          color: $H-text-color;
+          font-size: 16px;
+        }
+      }
+    }
+    .details-section {
+      margin-top: 130px;
+      background-color: $gallery-bg-color;
+      .detail-item {
+        padding-right: 30px;
+        span {
+          color: $H-text-color;
+          font-size: 23px;
+          margin-bottom: 45px;
+          display: block;
+        }
+        p {
+          color: $secondery-color;
+        }
+        .detail-items {
+          color: $H-text-color;
+          list-style: none;
+          margin: 25px 0;
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            background-color: $secondery-color;
+            transform: rotate(45deg);
+            margin-left: 20px;
+          }
+          &:first-child {
+            margin-top: 65px;
+          }
+          &:last-child {
+            margin-bottom: 65px;
+          }
+        }
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
