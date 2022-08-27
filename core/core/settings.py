@@ -37,8 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'registration',
-    'products',
+    'project.apps.ProjectConfig',
 ]
 
 MIDDLEWARE = [
@@ -132,4 +131,4 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # user config
-AUTH_USER_MODEL = 'registration.User'
+AUTH_USER_MODEL = 'project.User'
