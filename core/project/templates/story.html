@@ -11,9 +11,10 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
         <!-- Theme CSS -->
+        {% load static %}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-        <link rel="stylesheet" href="assets/css/style.css" />
-        <link rel="stylesheet" href="assets/css/responsive.css" />
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
     </head>
     <body>
         <header>
@@ -32,20 +33,20 @@
                                 </li>
                                 <li class="bag">
                                     <span class="count">۲</span>
-                                    <a href=""><img src="assets/images/bag.svg" alt="" /></a>
+                                    <a href=""><img src="{% static 'images/bag.svg' %}" alt="" /></a>
                                     <div class="sub-menu">
                                         <div class="text-start">
                                             <a href="">
                                                 <button class="show-bag">
                                                     مشاهده سبد خرید
-                                                    <img src="assets/images/prev.svg" alt="" />
+                                                    <img src="{% static 'images/prev.svg' %}" alt="" />
                                                 </button>
                                             </a>
                                         </div>
                                         <ul>
                                             <li>
                                                 <div>
-                                                    <img src="assets/images/story.png" alt="" />
+                                                    <img src="{% static 'images/story.png' %}" alt="" />
                                                 </div>
                                                 <div>
                                                     <h5 class="pro-title">نام محصول</h5>
@@ -54,14 +55,14 @@
                                                     <a href="">
                                                         <button class="btn btn-buy" type="button">
                                                             مشاهده
-                                                            <img src="assets/images/prev.svg" alt="" />
+                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                                         </button>
                                                     </a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div>
-                                                    <img src="assets/images/story.png" alt="" />
+                                                    <img src="{% static 'images/story.png' %}" alt="" />
                                                 </div>
                                                 <div>
                                                     <h5 class="pro-title">نام محصول</h5>
@@ -70,14 +71,14 @@
                                                     <a href="">
                                                         <button class="btn btn-buy" type="button">
                                                             مشاهده
-                                                            <img src="assets/images/prev.svg" alt="" />
+                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                                         </button>
                                                     </a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div>
-                                                    <img src="assets/images/story.png" alt="" />
+                                                    <img src="{% static 'images/story.png' %}" alt="" />
                                                 </div>
                                                 <div>
                                                     <h5 class="pro-title">نام محصول</h5>
@@ -86,14 +87,14 @@
                                                     <a href="">
                                                         <button class="btn btn-buy" type="button">
                                                             مشاهده
-                                                            <img src="assets/images/prev.svg" alt="" />
+                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                                         </button>
                                                     </a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div>
-                                                    <img src="assets/images/story.png" alt="" />
+                                                    <img src="{% static 'images/story.png' %}" alt="" />
                                                 </div>
                                                 <div>
                                                     <h5 class="pro-title">نام محصول</h5>
@@ -102,14 +103,14 @@
                                                     <a href="">
                                                         <button class="btn btn-buy" type="button">
                                                             مشاهده
-                                                            <img src="assets/images/prev.svg" alt="" />
+                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                                         </button>
                                                     </a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div>
-                                                    <img src="assets/images/story.png" alt="" />
+                                                    <img src="{% static 'images/story.png' %}" alt="" />
                                                 </div>
                                                 <div>
                                                     <h5 class="pro-title">نام محصول</h5>
@@ -118,14 +119,14 @@
                                                     <a href="">
                                                         <button class="btn btn-buy" type="button">
                                                             مشاهده
-                                                            <img src="assets/images/prev.svg" alt="" />
+                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                                         </button>
                                                     </a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div>
-                                                    <img src="assets/images/story.png" alt="" />
+                                                    <img src="{% static 'images/story.png' %}" alt="" />
                                                 </div>
                                                 <div>
                                                     <h5 class="pro-title">نام محصول</h5>
@@ -134,14 +135,14 @@
                                                     <a href="">
                                                         <button class="btn btn-buy" type="button">
                                                             مشاهده
-                                                            <img src="assets/images/prev.svg" alt="" />
+                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                                         </button>
                                                     </a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div>
-                                                    <img src="assets/images/story.png" alt="" />
+                                                    <img src="{% static 'images/story.png' %}" alt="" />
                                                 </div>
                                                 <div>
                                                     <h5 class="pro-title">نام محصول</h5>
@@ -150,7 +151,7 @@
                                                     <a href="">
                                                         <button class="btn btn-buy" type="button">
                                                             مشاهده
-                                                            <img src="assets/images/prev.svg" alt="" />
+                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                                         </button>
                                                     </a>
                                                 </div>
@@ -172,20 +173,20 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href=""><img src="assets/images/like.svg" alt="" /></a>
+                                    <a href=""><img src="{% static 'images/like.svg' %}" alt="" /></a>
                                 </li>
                                 <li>
-                                    <button type="button" id="search-show"><img src="assets/images/search.svg" alt="" /></button>
+                                    <button type="button" id="search-show"><img src="{% static 'images/search.svg' %}" alt="" /></button>
                                 </li>
                             </ul>
                         </div>
                         <div class="child">
-                            <a href="" class="logo"><img src="assets/images/logo.svg" alt="" /></a>
+                            <a href="" class="logo"><img src="{% static 'images/logo.svg' %}" alt="" /></a>
                         </div>
                         <div class="child">
                             <ul>
                                 <li class="bell">
-                                    <a href="" class="main"><img src="assets/images/bell.svg" alt="" /></a>
+                                    <a href="" class="main"><img src="{% static 'images/bell.svg' %}" alt="" /></a>
                                     <div class="bell-info">
                                         <ul>
                                             <li><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></li>
@@ -206,7 +207,7 @@
                                     </div>
                                 </li>
                                 <li class="user">
-                                    <a href=""><img src="assets/images/user.svg" alt="" /></a>
+                                    <a href=""><img src="{% static 'images/user.svg' %}" alt="" /></a>
                                     <div class="user-info">
                                         <div class="flex">
                                             <div>
@@ -285,7 +286,7 @@
                                 <a href="">
                                     <button class="see-more">
                                         مشاهده سبد خرید
-                                        <img src="assets/images/prev.svg" alt="" />
+                                        <img src="{% static 'images/prev.svg' %}" alt="" />
                                     </button>
                                 </a>
                             </li>
@@ -309,10 +310,10 @@
                                     </div>
                                     <div class="child">
                                         <div>
-                                            <img src="assets/images/story-img.png" alt="" />
+                                            <img src="{% static 'images/story-img.png' %}" alt="" />
                                         </div>
                                         <div>
-                                            <img src="assets/images/blog.png" alt="" />
+                                            <img src="{% static 'images/blog.png' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -321,7 +322,7 @@
                                     <a href="">
                                         <button class="see-more">
                                             مشاهده سبد خرید
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
@@ -344,10 +345,10 @@
                                     </div>
                                     <div class="child">
                                         <div>
-                                            <img src="assets/images/story-img.png" alt="" />
+                                            <img src="{% static 'images/story-img.png' %}" alt="" />
                                         </div>
                                         <div>
-                                            <img src="assets/images/blog.png" alt="" />
+                                            <img src="{% static 'images/blog.png' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -356,7 +357,7 @@
                                     <a href="">
                                         <button class="see-more">
                                             مشاهده سبد خرید
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
@@ -378,10 +379,10 @@
                                     </div>
                                     <div class="child">
                                         <div>
-                                            <img src="assets/images/story-img.png" alt="" />
+                                            <img src="{% static 'images/story-img.png' %}" alt="" />
                                         </div>
                                         <div>
-                                            <img src="assets/images/blog.png" alt="" />
+                                            <img src="{% static 'images/blog.png' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -390,7 +391,7 @@
                                     <a href="">
                                         <button class="see-more">
                                             مشاهده سبد خرید
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
@@ -413,10 +414,10 @@
                                     </div>
                                     <div class="child">
                                         <div>
-                                            <img src="assets/images/story-img.png" alt="" />
+                                            <img src="{% static 'images/story-img.png' %}" alt="" />
                                         </div>
                                         <div>
-                                            <img src="assets/images/blog.png" alt="" />
+                                            <img src="{% static 'images/blog.png' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -425,7 +426,7 @@
                                     <a href="">
                                         <button class="see-more">
                                             مشاهده سبد خرید
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
@@ -448,10 +449,10 @@
                                     </div>
                                     <div class="child">
                                         <div>
-                                            <img src="assets/images/story-img.png" alt="" />
+                                            <img src="{% static 'images/story-img.png' %}" alt="" />
                                         </div>
                                         <div>
-                                            <img src="assets/images/blog.png" alt="" />
+                                            <img src="{% static 'images/blog.png' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -460,7 +461,7 @@
                                     <a href="">
                                         <button class="see-more">
                                             مشاهده سبد خرید
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
@@ -483,10 +484,10 @@
                                     </div>
                                     <div class="child">
                                         <div>
-                                            <img src="assets/images/story-img.png" alt="" />
+                                            <img src="{% static 'images/story-img.png' %}" alt="" />
                                         </div>
                                         <div>
-                                            <img src="assets/images/blog.png" alt="" />
+                                            <img src="{% static 'images/blog.png' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -495,7 +496,7 @@
                                     <a href="">
                                         <button class="see-more">
                                             مشاهده سبد خرید
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
@@ -519,10 +520,10 @@
                                     </div>
                                     <div class="child">
                                         <div>
-                                            <img src="assets/images/story-img.png" alt="" />
+                                            <img src="{% static 'images/story-img.png' %}" alt="" />
                                         </div>
                                         <div>
-                                            <img src="assets/images/blog.png" alt="" />
+                                            <img src="{% static 'images/blog.png' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -531,7 +532,7 @@
                                     <a href="">
                                         <button class="see-more">
                                             مشاهده سبد خرید
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
@@ -554,10 +555,10 @@
                                     </div>
                                     <div class="child">
                                         <div>
-                                            <img src="assets/images/story-img.png" alt="" />
+                                            <img src="{% static 'images/story-img.png' %}" alt="" />
                                         </div>
                                         <div>
-                                            <img src="assets/images/blog.png" alt="" />
+                                            <img src="{% static 'images/blog.png' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -566,7 +567,7 @@
                                     <a href="">
                                         <button class="see-more">
                                             مشاهده سبد خرید
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
@@ -589,10 +590,10 @@
                                     </div>
                                     <div class="child">
                                         <div>
-                                            <img src="assets/images/story-img.png" alt="" />
+                                            <img src="{% static 'images/story-img.png' %}" alt="" />
                                         </div>
                                         <div>
-                                            <img src="assets/images/blog.png" alt="" />
+                                            <img src="{% static 'images/blog.png' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -601,7 +602,7 @@
                                     <a href="">
                                         <button class="see-more">
                                             مشاهده سبد خرید
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
@@ -624,10 +625,10 @@
                                     </div>
                                     <div class="child">
                                         <div>
-                                            <img src="assets/images/story-img.png" alt="" />
+                                            <img src="{% static 'images/story-img.png' %}" alt="" />
                                         </div>
                                         <div>
-                                            <img src="assets/images/blog.png" alt="" />
+                                            <img src="{% static 'images/blog.png' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -636,7 +637,7 @@
                                     <a href="">
                                         <button class="see-more">
                                             مشاهده سبد خرید
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
@@ -659,10 +660,10 @@
                                     </div>
                                     <div class="child">
                                         <div>
-                                            <img src="assets/images/story-img.png" alt="" />
+                                            <img src="{% static 'images/story-img.png' %}" alt="" />
                                         </div>
                                         <div>
-                                            <img src="assets/images/blog.png" alt="" />
+                                            <img src="{% static 'images/blog.png' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -671,7 +672,7 @@
                                     <a href="">
                                         <button class="see-more">
                                             مشاهده سبد خرید
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
@@ -694,10 +695,10 @@
                                     </div>
                                     <div class="child">
                                         <div>
-                                            <img src="assets/images/story-img.png" alt="" />
+                                            <img src="{% static 'images/story-img.png' %}" alt="" />
                                         </div>
                                         <div>
-                                            <img src="assets/images/blog.png" alt="" />
+                                            <img src="{% static 'images/blog.png' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -706,7 +707,7 @@
                                     <a href="">
                                         <button class="see-more">
                                             مشاهده سبد خرید
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
@@ -729,10 +730,10 @@
                                     </div>
                                     <div class="child">
                                         <div>
-                                            <img src="assets/images/story-img.png" alt="" />
+                                            <img src="{% static 'images/story-img.png' %}" alt="" />
                                         </div>
                                         <div>
-                                            <img src="assets/images/blog.png" alt="" />
+                                            <img src="{% static 'images/blog.png' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -741,7 +742,7 @@
                                     <a href="">
                                         <button class="see-more">
                                             مشاهده سبد خرید
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
@@ -765,10 +766,10 @@
                                     </div>
                                     <div class="child">
                                         <div>
-                                            <img src="assets/images/story-img.png" alt="" />
+                                            <img src="{% static 'images/story-img.png' %}" alt="" />
                                         </div>
                                         <div>
-                                            <img src="assets/images/blog.png" alt="" />
+                                            <img src="{% static 'images/blog.png' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -777,7 +778,7 @@
                                     <a href="">
                                         <button class="see-more">
                                             مشاهده سبد خرید
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
@@ -800,10 +801,10 @@
                                     </div>
                                     <div class="child">
                                         <div>
-                                            <img src="assets/images/story-img.png" alt="" />
+                                            <img src="{% static 'images/story-img.png' %}" alt="" />
                                         </div>
                                         <div>
-                                            <img src="assets/images/blog.png" alt="" />
+                                            <img src="{% static 'images/blog.png' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -812,7 +813,7 @@
                                     <a href="">
                                         <button class="see-more">
                                             مشاهده سبد خرید
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
@@ -843,10 +844,10 @@
                                     </div>
                                     <div class="child">
                                         <div>
-                                            <img src="assets/images/story-img.png" alt="" />
+                                            <img src="{% static 'images/story-img.png' %}" alt="" />
                                         </div>
                                         <div>
-                                            <img src="assets/images/blog.png" alt="" />
+                                            <img src="{% static 'images/blog.png' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -869,10 +870,10 @@
                                     </div>
                                     <div class="child">
                                         <div>
-                                            <img src="assets/images/story-img.png" alt="" />
+                                            <img src="{% static 'images/story-img.png' %}" alt="" />
                                         </div>
                                         <div>
-                                            <img src="assets/images/blog.png" alt="" />
+                                            <img src="{% static 'images/blog.png' %}" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -882,94 +883,94 @@
                 </div>
             </nav>
             <div class="search-box" id="searchBox">
-                <button type="button" id="close-search"><img src="assets/images/close.svg" alt="" /></button>
+                <button type="button" id="close-search"><img src="{% static 'images/close.svg' %}" alt="" /></button>
                 <div class="container">
                     <div class="parent">
                         <div class="input-group mb-3">
-                            <img src="assets/images/search-icon.svg" alt="" />
+                            <img src="{% static 'images/search-icon.svg' %}" alt="" />
                             <input type="text" class="form-control" placeholder="" />
                             <button class="btn btn-outline-secondary" type="button">جستجو</button>
                         </div>
                         <ul>
                             <li>
-                                <a href=""><img src="assets/images/detail.png" alt="" /></a>
+                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
                                 <div>
                                     <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
                                     <span> طلا/ سواروسکی</span>
                                 </div>
                             </li>
                             <li>
-                                <a href=""><img src="assets/images/detail.png" alt="" /></a>
+                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
                                 <div>
                                     <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
                                     <span> طلا/ سواروسکی</span>
                                 </div>
                             </li>
                             <li>
-                                <a href=""><img src="assets/images/detail.png" alt="" /></a>
+                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
                                 <div>
                                     <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
                                     <span> طلا/ سواروسکی</span>
                                 </div>
                             </li>
                             <li>
-                                <a href=""><img src="assets/images/detail.png" alt="" /></a>
+                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
                                 <div>
                                     <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
                                     <span> طلا/ سواروسکی</span>
                                 </div>
                             </li>
                             <li>
-                                <a href=""><img src="assets/images/detail.png" alt="" /></a>
+                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
                                 <div>
                                     <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
                                     <span> طلا/ سواروسکی</span>
                                 </div>
                             </li>
                             <li>
-                                <a href=""><img src="assets/images/detail.png" alt="" /></a>
+                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
                                 <div>
                                     <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
                                     <span> طلا/ سواروسکی</span>
                                 </div>
                             </li>
                             <li>
-                                <a href=""><img src="assets/images/detail.png" alt="" /></a>
+                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
                                 <div>
                                     <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
                                     <span> طلا/ سواروسکی</span>
                                 </div>
                             </li>
                             <li>
-                                <a href=""><img src="assets/images/detail.png" alt="" /></a>
+                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
                                 <div>
                                     <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
                                     <span> طلا/ سواروسکی</span>
                                 </div>
                             </li>
                             <li>
-                                <a href=""><img src="assets/images/detail.png" alt="" /></a>
+                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
                                 <div>
                                     <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
                                     <span> طلا/ سواروسکی</span>
                                 </div>
                             </li>
                             <li>
-                                <a href=""><img src="assets/images/detail.png" alt="" /></a>
+                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
                                 <div>
                                     <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
                                     <span> طلا/ سواروسکی</span>
                                 </div>
                             </li>
                             <li>
-                                <a href=""><img src="assets/images/detail.png" alt="" /></a>
+                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
                                 <div>
                                     <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
                                     <span> طلا/ سواروسکی</span>
                                 </div>
                             </li>
                             <li>
-                                <a href=""><img src="assets/images/detail.png" alt="" /></a>
+                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
                                 <div>
                                     <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
                                     <span> طلا/ سواروسکی</span>
@@ -1489,12 +1490,12 @@
                         <div class="intro-items">
                             <div class="row align-items-center">
                                 <div class="col-md-7">
-                                    <img src="assets/images/story.png" alt="" class="intro-img wow animate__animated animate__fadeIn" />
-                                    <img src="assets/images/bottom.png" alt="" class="bottom-squre wow animate__animated animate__fadeIn"  />
+                                    <img src="{% static 'images/story.png' %}" alt="" class="intro-img wow animate__animated animate__fadeIn" />
+                                    <img src="{% static 'images/bottom.png' %}" alt="" class="bottom-squre wow animate__animated animate__fadeIn"  />
                                 </div>
                                 <div class="col-md-5">
                                     <div class="intro-item">
-                                        <img src="assets/images/top.png" alt="" class="top-squre wow animate__animated animate__fadeIn" />
+                                        <img src="{% static 'images/top.png' %}" alt="" class="top-squre wow animate__animated animate__fadeIn" />
                                         <div class="story-introduction wow animate__animated animate__fadeIn">
                                             <h3>عنوان</h3>
                                             <p>
@@ -1503,12 +1504,12 @@
                                             </p>
                                         </div>
 
-                                        <a href="#"><img src="assets/images/logo.png" alt="" class="logo" /></a>
+                                        <a href="#"><img src="{% static 'images/logo.png' %}" alt="" class="logo" /></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <img src="assets/images/icon.png" alt="" class="intro-icon wow animate__animated animate__fadeIn" />
+                        <img src="{% static 'images/icon.png' %}" alt="" class="intro-icon wow animate__animated animate__fadeIn" />
                     </div>
                 </div>
             </section>
@@ -1517,8 +1518,8 @@
                     <div class="container">
                         <a href="#">
                             <button>
-                                <img src="assets/images/circle.png" alt="" class="circle" />
-                                <img src="assets/images/down.png" alt="" class="down-icon" />
+                                <img src="{% static 'images/circle.png' %}" alt="" class="circle" />
+                                <img src="{% static 'images/down.png' %}" alt="" class="down-icon" />
                             </button>
                         </a>
                         <h3>لورم ایپسوم متن ساختگی با تولید سادگی</h3>
@@ -1533,7 +1534,7 @@
                             <path d="M4.19145 0.285645V12.3928H6.42371V12.884H0.124512V12.3928H2.35226V1.16605H0.124512V0.674368H0.463423C1.7173 0.691678 2.9688 0.561149 4.19145 0.285645Z" fill="#BACCB6"/>
                             </svg>
                             
-                        <img src="assets/images/poco.png" alt="" class="poco mt-4" />
+                        <img src="{% static 'images/poco.png' %}" alt="" class="poco mt-4" />
                             
                     </div>
                 </div>
@@ -1546,7 +1547,7 @@
                             <ul>
                                 <li>
                                    <div>
-                                    <img src="assets/images/Vector.png" alt="" class="colection-img wow animate__animated animate__fadeIn" />
+                                    <img src="{% static 'images/Vector.png' %}" alt="" class="colection-img wow animate__animated animate__fadeIn" />
                                    </div>
                                     <div>
                                         <h4>لورم ایپسوم متن ساختگی با تولید سادگی </h4>
@@ -1558,7 +1559,7 @@
                                 </li>
                                 <li>
                                     <div>
-                                        <img src="assets/images/Vector.png" alt="" class="colection-img wow animate__animated animate__fadeIn" />
+                                        <img src="{% static 'images/Vector.png' %}" alt="" class="colection-img wow animate__animated animate__fadeIn" />
                                     </div>
                                      <div>
                                          <h4>لورم ایپسوم متن ساختگی با تولید سادگی </h4>
@@ -1570,7 +1571,7 @@
                                  </li>
                                  <li>
                                     <div>
-                                        <img src="assets/images/Vector.png" alt="" class="colection-img wow animate__animated animate__fadeIn" />
+                                        <img src="{% static 'images/Vector.png' %}" alt="" class="colection-img wow animate__animated animate__fadeIn" />
                                     </div>
                                      <div>
                                          <h4>لورم ایپسوم متن ساختگی با تولید سادگی </h4>
@@ -1582,7 +1583,7 @@
                                  </li>
                                  <li>
                                     <div>
-                                        <img src="assets/images/Vector.png" alt="" class="colection-img wow animate__animated animate__fadeIn" />
+                                        <img src="{% static 'images/Vector.png' %}" alt="" class="colection-img wow animate__animated animate__fadeIn" />
                                     </div>
                                      <div>
                                          <h4>لورم ایپسوم متن ساختگی با تولید سادگی </h4>
@@ -1616,7 +1617,7 @@
                         <div class="row align-items-center">
                             <div class="col-sm-6 order-md-1 order-2">
                                 <div class="announced-item">
-                                    <img src="assets/images/north.png" alt="" class="icon" />
+                                    <img src="{% static 'images/north.png' %}" alt="" class="icon" />
                                     <h3>لورم ایپسوم</h3>
                                     <p>
                                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
@@ -1625,7 +1626,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-6 order-md-1 order-1">
-                                <img src="assets/images/announced.png" alt="" />
+                                <img src="{% static 'images/announced.png' %}" alt="" />
                             </div>
                         </div>
                     </div>
@@ -1640,7 +1641,7 @@
                                 <h2 class="accordion-header" id="flush-headingOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                                         <span>ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟</span>
-                                        <img src="assets/images/plus.png" alt="" />
+                                        <img src="{% static 'images/plus.png' %}" alt="" />
                                     </button>
                                 </h2>
                                 <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -1651,7 +1652,7 @@
                                 <h2 class="accordion-header" id="flush-headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                                         <span>ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟</span>
-                                        <img src="assets/images/plus.png" alt="" />
+                                        <img src="{% static 'images/plus.png' %}" alt="" />
                                     </button>
                                 </h2>
                                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
@@ -1662,7 +1663,7 @@
                                 <h2 class="accordion-header" id="flush-headingThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
                                         <span>ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟</span>
-                                        <img src="assets/images/plus.png" alt="" />
+                                        <img src="{% static 'images/plus.png' %}" alt="" />
                                     </button>
                                 </h2>
                                 <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
@@ -1680,19 +1681,19 @@
                     <div class="col-lg-3 d-lg-block d-none">
                         <ul class="info">
                             <li>
-                                <a href=""><img src="assets/images/style.png" alt="" /></a>
+                                <a href=""><img src="{% static 'images/style.png' %}" alt="" /></a>
                             </li>
                             <li>
-                                <a href=""><img src="assets/images/style.png" alt="" /></a>
+                                <a href=""><img src="{% static 'images/style.png' %}" alt="" /></a>
                             </li>
                         </ul>
                     </div>
                     <div class="col-lg-6 text-center">
-                        <a href="" class="logo"><img src="assets/images/footer-logo.svg" alt="" /></a>
+                        <a href="" class="logo"><img src="{% static 'images/footer-logo.svg' %}" alt="" /></a>
                         <p>
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
                         </p>
-                        <img class="number" src="assets/images/1353.svg" alt="" />
+                        <img class="number" src="{% static 'images/1353.svg' %}" alt="" />
                         <a href="" class="read-more">
                             بیشتر بخوانید
                             <svg width="10" height="23" viewBox="0 0 10 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1764,16 +1765,16 @@
                         </ul>
                         <ul class="info">
                             <li>
-                                <a href=""><img src="assets/images/style.png" alt="" /></a>
+                                <a href=""><img src="{% static 'images/style.png' %}" alt="" /></a>
                             </li>
                             <li>
-                                <a href=""><img src="assets/images/style.png" alt="" /></a>
+                                <a href=""><img src="{% static 'images/style.png' %}" alt="" /></a>
                             </li>
                             <li class="d-lg-none d-block">
-                                <a href=""><img src="assets/images/style.png" alt="" /></a>
+                                <a href=""><img src="{% static 'images/style.png' %}" alt="" /></a>
                             </li>
                             <li class="d-lg-none d-block">
-                                <a href=""><img src="assets/images/style.png" alt="" /></a>
+                                <a href=""><img src="{% static 'images/style.png' %}" alt="" /></a>
                             </li>
                         </ul>
                     </div>
@@ -1783,23 +1784,23 @@
         <div class="mobile-bottom-navbar d-lg-none d-block">
             <ul>
                 <li>
-                    <button type="button" id="searchMobile"><img src="assets/images/search.svg" alt="" /></button>
+                    <button type="button" id="searchMobile"><img src="{% static 'images/search.svg' %}" alt="" /></button>
                 </li>
                 <li class="bag">
-                    <button type="button" id="showMobileBag"><img src="assets/images/bag.svg" alt="" /> <span class="count">۲</span></button>
+                    <button type="button" id="showMobileBag"><img src="{% static 'images/bag.svg' %}" alt="" /> <span class="count">۲</span></button>
                     <div class="sub-menu">
                         <div class="text-start">
                             <a href="">
                                 <button class="show-bag">
                                     مشاهده سبد خرید
-                                    <img src="assets/images/prev.svg" alt="" />
+                                    <img src="{% static 'images/prev.svg' %}" alt="" />
                                 </button>
                             </a>
                         </div>
                         <ul>
                             <li>
                                 <div>
-                                    <img src="assets/images/story.png" alt="" />
+                                    <img src="{% static 'images/story.png' %}" alt="" />
                                 </div>
                                 <div>
                                     <h5 class="pro-title">نام محصول</h5>
@@ -1808,14 +1809,14 @@
                                     <a href="">
                                         <button class="btn btn-buy" type="button">
                                             مشاهده
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div>
-                                    <img src="assets/images/story.png" alt="" />
+                                    <img src="{% static 'images/story.png' %}" alt="" />
                                 </div>
                                 <div>
                                     <h5 class="pro-title">نام محصول</h5>
@@ -1824,14 +1825,14 @@
                                     <a href="">
                                         <button class="btn btn-buy" type="button">
                                             مشاهده
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div>
-                                    <img src="assets/images/story.png" alt="" />
+                                    <img src="{% static 'images/story.png' %}" alt="" />
                                 </div>
                                 <div>
                                     <h5 class="pro-title">نام محصول</h5>
@@ -1840,14 +1841,14 @@
                                     <a href="">
                                         <button class="btn btn-buy" type="button">
                                             مشاهده
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div>
-                                    <img src="assets/images/story.png" alt="" />
+                                    <img src="{% static 'images/story.png' %}" alt="" />
                                 </div>
                                 <div>
                                     <h5 class="pro-title">نام محصول</h5>
@@ -1856,14 +1857,14 @@
                                     <a href="">
                                         <button class="btn btn-buy" type="button">
                                             مشاهده
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div>
-                                    <img src="assets/images/story.png" alt="" />
+                                    <img src="{% static 'images/story.png' %}" alt="" />
                                 </div>
                                 <div>
                                     <h5 class="pro-title">نام محصول</h5>
@@ -1872,14 +1873,14 @@
                                     <a href="">
                                         <button class="btn btn-buy" type="button">
                                             مشاهده
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div>
-                                    <img src="assets/images/story.png" alt="" />
+                                    <img src="{% static 'images/story.png' %}" alt="" />
                                 </div>
                                 <div>
                                     <h5 class="pro-title">نام محصول</h5>
@@ -1888,14 +1889,14 @@
                                     <a href="">
                                         <button class="btn btn-buy" type="button">
                                             مشاهده
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div>
-                                    <img src="assets/images/story.png" alt="" />
+                                    <img src="{% static 'images/story.png' %}" alt="" />
                                 </div>
                                 <div>
                                     <h5 class="pro-title">نام محصول</h5>
@@ -1904,7 +1905,7 @@
                                     <a href="">
                                         <button class="btn btn-buy" type="button">
                                             مشاهده
-                                            <img src="assets/images/prev.svg" alt="" />
+                                            <img src="{% static 'images/prev.svg' %}" alt="" />
                                         </button>
                                     </a>
                                 </div>
@@ -1926,10 +1927,10 @@
                     </div>
                 </li>
                 <li>
-                    <a href=""><img src="assets/images/like.svg" alt="" /></a>
+                    <a href=""><img src="{% static 'images/like.svg' %}" alt="" /></a>
                 </li>
                 <li class="user">
-                    <a href=""><img src="assets/images/user.svg" alt="" /></a>
+                    <a href=""><img src="{% static 'images/user.svg' %}" alt="" /></a>
                 </li>
             </ul>
         </div>
@@ -1942,8 +1943,8 @@
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-        <script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/main.js"></script>
+        <script src="{% static 'js/wow.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
         <!-- /scripts -->
     </body>
 </html>
