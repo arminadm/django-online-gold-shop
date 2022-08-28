@@ -1,0 +1,368 @@
+.gallery {
+  section {
+    p {
+      color: $H-text-color;
+    }
+    .slider-section {
+      position: relative;
+      .control {
+        position: absolute;
+        bottom: 30px;
+        right: 0;
+        left: 0;
+        text-align: center;
+        z-index: 2;
+        button {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        ul {
+          display: inline-block;
+          vertical-align: middle;
+          li {
+            position: relative;
+            display: inline-block;
+            list-style: none;
+            text-align: center;
+            margin: 0 10px;
+            cursor: pointer;
+            span {
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: 21px;
+              display: block;
+              background: #fff;
+              width: 8px;
+              height: 8px;
+              margin: 0 auto;
+              transform: rotate(45deg);
+            }
+            svg {
+              width: 50px;
+              margin: 0 auto;
+              -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg);
+              visibility: hidden;
+              .circle {
+                stroke: $H-text-color;
+              }
+            }
+            &.active {
+              span {
+                background: $H-text-color;
+              }
+              svg {
+                visibility: visible;
+                .circle {
+                  animation: slider 4s ease-in-out;
+                }
+              }
+            }
+          }
+        }
+      }
+      .slider {
+        position: relative;
+        height: 800px;
+        width: 100%;
+        .slider-item {
+          position: absolute;
+          width: 100%;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          opacity: 0;
+          z-index: 0;
+          transition: all 0.4s ease-in-out;
+          &.d-block {
+            opacity: 1;
+            z-index: 1;
+          }
+          .background {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+          }
+          .container {
+            position: relative;
+            z-index: 1;
+            img {
+              display: block;
+              width: 80%;
+              margin: 0 auto;
+            }
+          }
+          h3 {
+            color: $H-text-color;
+            margin-top: 140px;
+            margin-bottom: 10px;
+          }
+          p {
+            color: $H-text-color;
+          }
+          .btn-more {
+            font-size: 19px;
+            color: $H-text-color;
+            text-decoration: underline;
+            margin-top: 10px;
+            img {
+              width: 10px;
+              display: inline-block;
+              margin-right: 4px;
+              vertical-align: middle;
+            }
+            &:hover {
+              color: $H-text-color-hover;
+            }
+          }
+        }
+      }
+    }
+    .intro-gallery {
+      padding: 0 0 120px;
+      position: relative;
+      .subject-img {
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+        height: 500px;
+      }
+      .subject-item {
+        width: 40%;
+        h3 {
+          margin: 30px 0;
+          color: $secondery-color;
+        }
+      }
+      .subject-text {
+        margin: 0 auto;
+        width: 500px;
+
+        h1 {
+          color: $H-text-color;
+          margin-bottom: 30px;
+          padding-top: 230px;
+        }
+      }
+    }
+    .mobile-intro-gallery {
+      display: none;
+      .subject-item {
+        width: 40%;
+        h3 {
+          margin: 30px 0;
+          color: $secondery-color;
+        }
+      }
+      .subject-text {
+        margin: 0 auto;
+        width: 500px;
+
+        h1 {
+          color: $H-text-color;
+          margin-bottom: 30px;
+          padding-top: 230px;
+        }
+      }
+    }
+    .guide {
+      position: relative;
+      margin-bottom: -50px;
+      z-index: 2;
+      .guide-item {
+        list-style: none;
+        display: inline-block;
+        color: $bg-color;
+        &::after {
+          content: "/";
+        }
+        &:last-child {
+          &::after {
+            content: "";
+          }
+        }
+        a {
+          color: $bg-color;
+          display: inline-block;
+          &:hover{
+            color: $H-text-color;
+          }
+        }
+      }
+    }
+    .info-section {
+      margin-top: 10px;
+      img {
+        width: 90%;
+      }
+      h4 {
+        display: block;
+        color: $H-text-color;
+        font-size: 25px;
+        margin-bottom: 25px;
+      }
+      p {
+        margin-bottom: 30px;
+        text-align: justify;
+      }
+    }
+    .details-section {
+      margin-top: 130px;
+      background: #f4f4f153;
+      .detail-item {
+        padding-top: 50px;
+        span {
+          color: $H-text-color;
+          font-size: 23px;
+          margin-bottom: 45px;
+          display: block;
+        }
+        p {
+          color: $secondery-color;
+        }
+        .detail-items {
+          list-style: none;
+          margin: 25px 0;
+          line-height: 25px;
+          a {
+            color: $H-text-color;
+            &:hover {
+              color: $H-text-color-hover;
+            }
+          }
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            background-color: $secondery-color;
+            transform: rotate(45deg);
+            margin-left: 20px;
+          }
+          &:first-child {
+            margin-top: 65px;
+          }
+          &:last-child {
+            margin-bottom: 65px;
+          }
+        }
+      }
+      img {
+        max-width: 100%;
+        height: 100%;
+      }
+    }
+    .gallery-icon {
+      margin-top: 100px;
+      .information-text {
+        display: block;
+        margin: 50px auto 0;
+        color: $H-text-color;
+        width: 70%;
+        line-height: 25px;
+      }
+      h5 {
+        margin-top: 50px;
+        color: $primary-color;
+      }
+    }
+    .slider-section {
+      margin-top: 100px;
+      .slider-btn {
+        h4 {
+          color: $H-text-color;
+          font-size: 20px;
+          vertical-align: middle;
+        }
+        .icon {
+          display: inline-block;
+          width: 44px;
+          height: 44px;
+          border: 2px solid rgba(0, 0, 0, 0.578);
+          border-radius: 50%;
+          margin: 0 30px;
+          img {
+            width: 10px;
+            height: 20px;
+            margin-top: 10px;
+            color: #000;
+            filter: brightness(0.5);
+          }
+          &:hover {
+            border: 2px solid #000;
+            img {
+              filter: brightness(1);
+            }
+          }
+        }
+      }
+    }
+    .splide {
+      margin-top: 20px;
+      .splide__arrow svg {
+        fill: #fff;
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+      .splide__arrow {
+        background: transparent;
+        height: 2.5rem;
+        width: 2.5rem;
+        opacity: 1;
+      }
+      .splide__arrows--rtl .splide__arrow--next svg {
+        transform: scaleX(1);
+      }
+      .splide__arrows--rtl .splide__arrow--prev {
+        svg {
+          transform: scaleX(-1);
+        }
+      }
+      .splide__arrows--rtl .splide__arrow--prev {
+        left: auto;
+        right: 41%;
+        top: -2rem;
+      }
+      .splide__arrows--rtl .splide__arrow--next {
+        left: 41%;
+        right: auto;
+        top: -2rem;
+      }
+      .item {
+        padding: 20px;
+        img {
+          width: 100%;
+        }
+        p {
+          color: #000;
+          margin-top: 15px;
+          a {
+            color: #000;
+          }
+        }
+      }
+    }
+    .explain {
+      margin-top: 250px;
+
+      p {
+        color: #000;
+        width: 500px;
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+    .bottom-subject {
+      margin-top: 100px;
+      .bottom-subject-img {
+        width: 100%;
+      }
+    }
+  }
+}
