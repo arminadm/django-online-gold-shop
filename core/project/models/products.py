@@ -11,6 +11,9 @@ class Products(models.Model):
     quantity = models.IntegerField(null=True, blank=True)
     status = models.BooleanField(default=False)
     category = models.ManyToManyField("Category")
+    sale_count = models.IntegerField(default=0)
+    score = models.FloatField(default=5.0)
+    popularity = models.IntegerField(default=0)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 

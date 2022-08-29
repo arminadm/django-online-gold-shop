@@ -17,8 +17,8 @@ General:
 
 - [ ] Menu should be dynamic(Should be added and remove)
 - [ ] Recommend system = random from same category 
-- [ ] Most sale
-- [ ] Most popular 
-- [ ] Highest score
+- [x] Most sale
+- [x] Most popular 
+- [x] Highest score
 - [ ] Password field in front should be deleted
 - [ ] All notifications are sent via sms
