@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.core.exceptions import ValidationError
 
 # Create your models here.
 class CustomUserManager(BaseUserManager):
@@ -82,14 +83,51 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return f"{self.id} - {self.phone}"
 
+'''
+here in this function we will check if national code is a valid one
+'''
+def validate_national_code(value):
+    value = str(value)
+
+    # code must be between 8 and 10 char
+    if len(value) < 8 and len(value) > 10:
+        raise ValidationError('کد ملی صحیح نمیباشد')
+    
+    # if its not 10 char we add 0 before it
+    if len(value) < 10:
+        value = '0'*(10 - len(value)) + value
+
+    value = list(value)
+    # here is the first step of algorithm
+    total = 0
+    for i in range(len(value)):
+        if i == len(value)-1:
+            continue
+        value[i] = int(value[i])
+        total += value[i] * (10 - i)
+    # second step of algorithm
+    reminder = total % 11
+
+    # final check of algorithm that has two part
+    if reminder < 2:
+        if reminder != int(value[-1]):
+            raise ValidationError('کد ملی صحیح نمیباشد')
+    else:
+        reminder
+        if 11 - reminder != int(value[-1]):
+            raise ValidationError('کد ملی صحیح نمیباشد')
+
+
 class Profile(models.Model):
     # we can have access to phone number via user foreign key
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=255, blank=True, null=True)
     last_name = models.CharField(max_length=255, blank=True, null=True)
-    national_code = models.CharField(max_length=10, unique=True, blank=True, null=True)
+    national_code = models.CharField(max_length=10,unique=True, blank=True, null=True, validators=[validate_national_code])
     birth_date = models.DateTimeField(blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
+    address = models.TextField(max_length=512, blank=True, null=True)
+    is_verified = models.BooleanField(default=False)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
