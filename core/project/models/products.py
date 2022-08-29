@@ -1,5 +1,6 @@
 from django.db import models
 from PIL import Image
+from .registration import User
 
 # Create your models here.
 class Products(models.Model):
@@ -47,3 +48,8 @@ class Photo(models.Model):
        if img.height > 1125 or img.width > 1125:
            img.thumbnail((1125,1125))
        img.save(self.photo.path,quality=70,optimize=True)
+
+# all favorites are here with one query we can find users favorites
+class Favorite(models.Model):
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    product = models.ForeignKey(Products, on_delete=models.DO_NOTHING)
