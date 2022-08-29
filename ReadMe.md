@@ -1,9 +1,9 @@
 User:
 - [x] Login with sms #TODO should be checked
-- [ ] Complete profile (required)
+- [x] Complete profile (required)
 - [x] Code meli (should be verified with the algorithm)
-- [ ] User can send products to any address 
-- [ ] Users have favorites products
+- [x] User can send products to any address #TODO should be checked
+- [x] Users have favorites products
 Product:
 - [x] Category for products 
 - [x] Every product has image, description, amount, title

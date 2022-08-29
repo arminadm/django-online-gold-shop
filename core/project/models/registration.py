@@ -127,7 +127,7 @@ class Profile(models.Model):
     birth_date = models.DateTimeField(blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
     address = models.TextField(max_length=512, blank=True, null=True)
-    is_verified = models.BooleanField(default=False)
+    is_completed = models.BooleanField(default=False)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
