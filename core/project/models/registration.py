@@ -117,6 +117,11 @@ def validate_national_code(value):
         if 11 - reminder != int(value[-1]):
             raise ValidationError('کد ملی صحیح نمیباشد')
 
+def validate_zip_code(value):
+    value = str(value)
+    if len(value) != 10:
+        raise ValidationError('کد پستی صحیح نمیباشد')
+
 
 class Profile(models.Model):
     # we can have access to phone number via user foreign key
@@ -126,7 +131,6 @@ class Profile(models.Model):
     national_code = models.CharField(max_length=10,unique=True, blank=True, null=True, validators=[validate_national_code])
     birth_date = models.DateTimeField(blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
-    address = models.TextField(max_length=512, blank=True, null=True)
     is_completed = models.BooleanField(default=False)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
@@ -137,6 +141,15 @@ class Profile(models.Model):
 
     def __str__(self):
         return f"{self.user.id} - {self.user.phone} - {self.first_name} - {self.last_name}"
+
+class Address(models.Model):
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    state = models.CharField(max_length=255)
+    city = models.CharField(max_length=255)
+    zip_code = models.IntegerField(validators=[validate_zip_code])
+    # address for this address
+    detail = models.TextField()
+    
 
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):

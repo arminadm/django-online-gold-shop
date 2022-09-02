@@ -54,5 +54,5 @@ class Photo(models.Model):
 
 # all favorites are here with one query we can find users favorites
 class Favorite(models.Model):
-    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    product = models.ForeignKey(Products, on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Products, on_delete=models.CASCADE)
