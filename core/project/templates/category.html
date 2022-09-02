@@ -43,14 +43,15 @@
                                             </a>
                                         </div>
                                         <ul>
+                                            {% for item in shopcart %}
                                             <li>
                                                 <div>
                                                     <img src="{% static 'images/story.png' %}" alt="" />
                                                 </div>
                                                 <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
+                                                    <h5 class="pro-title">{{ item.product.name }}</h5>
                                                     <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
+                                                    <span class="price">{{ item.product.price }}<span>تومان</span></span>
                                                     <a href="">
                                                         <button class="btn btn-buy" type="button">
                                                             مشاهده
@@ -59,102 +60,7 @@
                                                     </a>
                                                 </div>
                                             </li>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
+                                            {% endfor %}
                                         </ul>
                                         <hr />
                                         <div class="final-price">
@@ -166,7 +72,7 @@
                                                 </a>
                                             </div>
                                             <div>
-                                                <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
+                                                <span class="price">{{ price }}<span>تومان</span></span>
                                             </div>
                                         </div>
                                     </div>
@@ -1780,6 +1686,7 @@
                                     </ul>
                                 </div>
                                 <div class="row">
+                                    {% for product in products %}
                                     <article class="col-xl-4 col-md-6">
                                         <div class="product-box">
                                             <a href="" class="product-img-holder">
@@ -1797,349 +1704,26 @@
                                                     />
                                                 </svg>
                                             </button>
-                                            <h5><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h5>
+                                            <h5><a href="">{{ product.name }}</a></h5>
                                             <hr />
                                             <div class="product-details">
                                                 <div>
                                                     <a class="order-btn" data-bs-toggle="modal" data-bs-target="#gallery"><button>مشاهده</button></a>
                                                 </div>
                                                 <div>
-                                                    <a href="" class="shop-btn">
+                                                    <a href="/products/shopcart/{{ product.slug }}/" class="shop-btn">
                                                         <button>
                                                             <img src="{% static 'images/bag-black.svg' %}" alt="" />
                                                         </button>
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ تومان</span>
+                                                    <span class="price">{{ product.price }}</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </article>
-                                    <article class="col-xl-4 col-md-6">
-                                        <div class="product-box">
-                                            <a href="" class="product-img-holder">
-                                                <img class="active" src="{% static 'images/products/product-img.png' %}" alt="" />
-                                                <img src="{% static 'images/products/product-img-1.png' %}" alt="" />
-                                                <img src="{% static 'images/products/product-img-2.png' %}" alt="" />
-                                            </a>
-                                            <button class="like" data-like="false">
-                                                <svg width="36" height="28" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M32.752 3.29017L32.8519 3.39027C33.4657 4.00325 33.9527 4.73104 34.2849 5.53236C34.6171 6.33368 34.7881 7.19273 34.7881 8.06019C34.7881 8.92765 34.6171 9.78671 34.2849 10.588C33.9527 11.3893 33.4657 12.1171 32.8519 12.7301L20.1619 25.4201C19.8599 25.7239 19.5007 25.965 19.1052 26.1295C18.7096 26.2941 18.2854 26.379 17.8569 26.379C17.4285 26.379 17.0043 26.2941 16.6087 26.1295C16.2131 25.965 15.854 25.7239 15.5519 25.4201L2.86194 12.7301C2.24814 12.1171 1.76124 11.3893 1.42902 10.588C1.09679 9.78671 0.925781 8.92765 0.925781 8.06019C0.925781 7.19273 1.09679 6.33368 1.42902 5.53236C1.76124 4.73104 2.24814 4.00325 2.86194 3.39027V3.39027C3.47614 2.77317 4.2062 2.28349 5.01019 1.94935C5.81419 1.61522 6.67627 1.44301 7.54694 1.44301C8.4176 1.44301 9.27968 1.61522 10.0837 1.94935C10.8877 2.28349 11.6177 2.77317 12.2319 3.39027L15.452 6.64027C15.7624 6.96021 16.1338 7.21462 16.5444 7.38832C16.9549 7.56202 17.3962 7.6515 17.842 7.6515C18.2878 7.6515 18.729 7.56202 19.1395 7.38832C19.5501 7.21462 19.9215 6.96021 20.2319 6.64027L23.3019 3.42006C23.9074 2.77983 24.635 2.2678 25.4419 1.91371C26.2488 1.55962 27.1185 1.37065 27.9995 1.35853C28.8806 1.34641 29.7551 1.51114 30.5714 1.84291C31.3877 2.17467 32.1292 2.66685 32.752 3.29017V3.29017Z"
-                                                        stroke="#3F3F3F"
-                                                        stroke-width="1.5"
-                                                        stroke-miterlimit="10"
-                                                    />
-                                                </svg>
-                                            </button>
-                                            <h5><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h5>
-                                            <hr />
-                                            <div class="product-details">
-                                                <div>
-                                                    <a class="order-btn" data-bs-toggle="modal" data-bs-target="#gallery"><button>مشاهده</button></a>
-                                                </div>
-                                                <div>
-                                                    <a href="" class="shop-btn">
-                                                        <button>
-                                                            <img src="{% static 'images/bag-black.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ تومان</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="col-xl-4 col-md-6">
-                                        <div class="product-box">
-                                            <a href="" class="product-img-holder">
-                                                <img class="active" src="{% static 'images/products/product-img.png' %}" alt="" />
-                                                <img src="{% static 'images/products/product-img-1.png' %}" alt="" />
-                                                <img src="{% static 'images/products/product-img-2.png' %}" alt="" />
-                                            </a>
-                                            <button class="like" data-like="false">
-                                                <svg width="36" height="28" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M32.752 3.29017L32.8519 3.39027C33.4657 4.00325 33.9527 4.73104 34.2849 5.53236C34.6171 6.33368 34.7881 7.19273 34.7881 8.06019C34.7881 8.92765 34.6171 9.78671 34.2849 10.588C33.9527 11.3893 33.4657 12.1171 32.8519 12.7301L20.1619 25.4201C19.8599 25.7239 19.5007 25.965 19.1052 26.1295C18.7096 26.2941 18.2854 26.379 17.8569 26.379C17.4285 26.379 17.0043 26.2941 16.6087 26.1295C16.2131 25.965 15.854 25.7239 15.5519 25.4201L2.86194 12.7301C2.24814 12.1171 1.76124 11.3893 1.42902 10.588C1.09679 9.78671 0.925781 8.92765 0.925781 8.06019C0.925781 7.19273 1.09679 6.33368 1.42902 5.53236C1.76124 4.73104 2.24814 4.00325 2.86194 3.39027V3.39027C3.47614 2.77317 4.2062 2.28349 5.01019 1.94935C5.81419 1.61522 6.67627 1.44301 7.54694 1.44301C8.4176 1.44301 9.27968 1.61522 10.0837 1.94935C10.8877 2.28349 11.6177 2.77317 12.2319 3.39027L15.452 6.64027C15.7624 6.96021 16.1338 7.21462 16.5444 7.38832C16.9549 7.56202 17.3962 7.6515 17.842 7.6515C18.2878 7.6515 18.729 7.56202 19.1395 7.38832C19.5501 7.21462 19.9215 6.96021 20.2319 6.64027L23.3019 3.42006C23.9074 2.77983 24.635 2.2678 25.4419 1.91371C26.2488 1.55962 27.1185 1.37065 27.9995 1.35853C28.8806 1.34641 29.7551 1.51114 30.5714 1.84291C31.3877 2.17467 32.1292 2.66685 32.752 3.29017V3.29017Z"
-                                                        stroke="#3F3F3F"
-                                                        stroke-width="1.5"
-                                                        stroke-miterlimit="10"
-                                                    />
-                                                </svg>
-                                            </button>
-                                            <h5><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h5>
-                                            <hr />
-                                            <div class="product-details">
-                                                <div>
-                                                    <a class="order-btn" data-bs-toggle="modal" data-bs-target="#gallery"><button>مشاهده</button></a>
-                                                </div>
-                                                <div>
-                                                    <a href="" class="shop-btn">
-                                                        <button>
-                                                            <img src="{% static 'images/bag-black.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ تومان</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="col-xl-4 col-md-6">
-                                        <div class="product-box">
-                                            <a href="" class="product-img-holder">
-                                                <img class="active" src="{% static 'images/products/product-img.png' %}" alt="" />
-                                                <img src="{% static 'images/products/product-img-1.png' %}" alt="" />
-                                                <img src="{% static 'images/products/product-img-2.png' %}" alt="" />
-                                            </a>
-                                            <button class="like" data-like="false">
-                                                <svg width="36" height="28" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M32.752 3.29017L32.8519 3.39027C33.4657 4.00325 33.9527 4.73104 34.2849 5.53236C34.6171 6.33368 34.7881 7.19273 34.7881 8.06019C34.7881 8.92765 34.6171 9.78671 34.2849 10.588C33.9527 11.3893 33.4657 12.1171 32.8519 12.7301L20.1619 25.4201C19.8599 25.7239 19.5007 25.965 19.1052 26.1295C18.7096 26.2941 18.2854 26.379 17.8569 26.379C17.4285 26.379 17.0043 26.2941 16.6087 26.1295C16.2131 25.965 15.854 25.7239 15.5519 25.4201L2.86194 12.7301C2.24814 12.1171 1.76124 11.3893 1.42902 10.588C1.09679 9.78671 0.925781 8.92765 0.925781 8.06019C0.925781 7.19273 1.09679 6.33368 1.42902 5.53236C1.76124 4.73104 2.24814 4.00325 2.86194 3.39027V3.39027C3.47614 2.77317 4.2062 2.28349 5.01019 1.94935C5.81419 1.61522 6.67627 1.44301 7.54694 1.44301C8.4176 1.44301 9.27968 1.61522 10.0837 1.94935C10.8877 2.28349 11.6177 2.77317 12.2319 3.39027L15.452 6.64027C15.7624 6.96021 16.1338 7.21462 16.5444 7.38832C16.9549 7.56202 17.3962 7.6515 17.842 7.6515C18.2878 7.6515 18.729 7.56202 19.1395 7.38832C19.5501 7.21462 19.9215 6.96021 20.2319 6.64027L23.3019 3.42006C23.9074 2.77983 24.635 2.2678 25.4419 1.91371C26.2488 1.55962 27.1185 1.37065 27.9995 1.35853C28.8806 1.34641 29.7551 1.51114 30.5714 1.84291C31.3877 2.17467 32.1292 2.66685 32.752 3.29017V3.29017Z"
-                                                        stroke="#3F3F3F"
-                                                        stroke-width="1.5"
-                                                        stroke-miterlimit="10"
-                                                    />
-                                                </svg>
-                                            </button>
-                                            <h5><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h5>
-                                            <hr />
-                                            <div class="product-details">
-                                                <div>
-                                                    <a class="order-btn" data-bs-toggle="modal" data-bs-target="#gallery"><button>مشاهده</button></a>
-                                                </div>
-                                                <div>
-                                                    <a href="" class="shop-btn">
-                                                        <button>
-                                                            <img src="{% static 'images/bag-black.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ تومان</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="col-xl-4 col-md-6">
-                                        <div class="product-box">
-                                            <a href="" class="product-img-holder">
-                                                <img class="active" src="{% static 'images/products/product-img.png' %}" alt="" />
-                                                <img src="{% static 'images/products/product-img-1.png' %}" alt="" />
-                                                <img src="{% static 'images/products/product-img-2.png' %}" alt="" />
-                                            </a>
-                                            <button class="like" data-like="false">
-                                                <svg width="36" height="28" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M32.752 3.29017L32.8519 3.39027C33.4657 4.00325 33.9527 4.73104 34.2849 5.53236C34.6171 6.33368 34.7881 7.19273 34.7881 8.06019C34.7881 8.92765 34.6171 9.78671 34.2849 10.588C33.9527 11.3893 33.4657 12.1171 32.8519 12.7301L20.1619 25.4201C19.8599 25.7239 19.5007 25.965 19.1052 26.1295C18.7096 26.2941 18.2854 26.379 17.8569 26.379C17.4285 26.379 17.0043 26.2941 16.6087 26.1295C16.2131 25.965 15.854 25.7239 15.5519 25.4201L2.86194 12.7301C2.24814 12.1171 1.76124 11.3893 1.42902 10.588C1.09679 9.78671 0.925781 8.92765 0.925781 8.06019C0.925781 7.19273 1.09679 6.33368 1.42902 5.53236C1.76124 4.73104 2.24814 4.00325 2.86194 3.39027V3.39027C3.47614 2.77317 4.2062 2.28349 5.01019 1.94935C5.81419 1.61522 6.67627 1.44301 7.54694 1.44301C8.4176 1.44301 9.27968 1.61522 10.0837 1.94935C10.8877 2.28349 11.6177 2.77317 12.2319 3.39027L15.452 6.64027C15.7624 6.96021 16.1338 7.21462 16.5444 7.38832C16.9549 7.56202 17.3962 7.6515 17.842 7.6515C18.2878 7.6515 18.729 7.56202 19.1395 7.38832C19.5501 7.21462 19.9215 6.96021 20.2319 6.64027L23.3019 3.42006C23.9074 2.77983 24.635 2.2678 25.4419 1.91371C26.2488 1.55962 27.1185 1.37065 27.9995 1.35853C28.8806 1.34641 29.7551 1.51114 30.5714 1.84291C31.3877 2.17467 32.1292 2.66685 32.752 3.29017V3.29017Z"
-                                                        stroke="#3F3F3F"
-                                                        stroke-width="1.5"
-                                                        stroke-miterlimit="10"
-                                                    />
-                                                </svg>
-                                            </button>
-                                            <h5><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h5>
-                                            <hr />
-                                            <div class="product-details">
-                                                <div>
-                                                    <a class="order-btn" data-bs-toggle="modal" data-bs-target="#gallery"><button>مشاهده</button></a>
-                                                </div>
-                                                <div>
-                                                    <a href="" class="shop-btn">
-                                                        <button>
-                                                            <img src="{% static 'images/bag-black.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ تومان</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="col-xl-4 col-md-6">
-                                        <div class="product-box">
-                                            <a href="" class="product-img-holder">
-                                                <img class="active" src="{% static 'images/products/product-img.png' %}" alt="" />
-                                                <img src="{% static 'images/products/product-img-1.png' %}" alt="" />
-                                                <img src="{% static 'images/products/product-img-2.png' %}" alt="" />
-                                            </a>
-                                            <button class="like" data-like="false">
-                                                <svg width="36" height="28" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M32.752 3.29017L32.8519 3.39027C33.4657 4.00325 33.9527 4.73104 34.2849 5.53236C34.6171 6.33368 34.7881 7.19273 34.7881 8.06019C34.7881 8.92765 34.6171 9.78671 34.2849 10.588C33.9527 11.3893 33.4657 12.1171 32.8519 12.7301L20.1619 25.4201C19.8599 25.7239 19.5007 25.965 19.1052 26.1295C18.7096 26.2941 18.2854 26.379 17.8569 26.379C17.4285 26.379 17.0043 26.2941 16.6087 26.1295C16.2131 25.965 15.854 25.7239 15.5519 25.4201L2.86194 12.7301C2.24814 12.1171 1.76124 11.3893 1.42902 10.588C1.09679 9.78671 0.925781 8.92765 0.925781 8.06019C0.925781 7.19273 1.09679 6.33368 1.42902 5.53236C1.76124 4.73104 2.24814 4.00325 2.86194 3.39027V3.39027C3.47614 2.77317 4.2062 2.28349 5.01019 1.94935C5.81419 1.61522 6.67627 1.44301 7.54694 1.44301C8.4176 1.44301 9.27968 1.61522 10.0837 1.94935C10.8877 2.28349 11.6177 2.77317 12.2319 3.39027L15.452 6.64027C15.7624 6.96021 16.1338 7.21462 16.5444 7.38832C16.9549 7.56202 17.3962 7.6515 17.842 7.6515C18.2878 7.6515 18.729 7.56202 19.1395 7.38832C19.5501 7.21462 19.9215 6.96021 20.2319 6.64027L23.3019 3.42006C23.9074 2.77983 24.635 2.2678 25.4419 1.91371C26.2488 1.55962 27.1185 1.37065 27.9995 1.35853C28.8806 1.34641 29.7551 1.51114 30.5714 1.84291C31.3877 2.17467 32.1292 2.66685 32.752 3.29017V3.29017Z"
-                                                        stroke="#3F3F3F"
-                                                        stroke-width="1.5"
-                                                        stroke-miterlimit="10"
-                                                    />
-                                                </svg>
-                                            </button>
-                                            <h5><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h5>
-                                            <hr />
-                                            <div class="product-details">
-                                                <div>
-                                                    <a class="order-btn" data-bs-toggle="modal" data-bs-target="#gallery"><button>مشاهده</button></a>
-                                                </div>
-                                                <div>
-                                                    <a href="" class="shop-btn">
-                                                        <button>
-                                                            <img src="{% static 'images/bag-black.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ تومان</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="col-xl-4 col-md-6">
-                                        <div class="product-box">
-                                            <a href="" class="product-img-holder">
-                                                <img class="active" src="{% static 'images/products/product-img.png' %}" alt="" />
-                                                <img src="{% static 'images/products/product-img-1.png' %}" alt="" />
-                                                <img src="{% static 'images/products/product-img-2.png' %}" alt="" />
-                                            </a>
-                                            <button class="like" data-like="false">
-                                                <svg width="36" height="28" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M32.752 3.29017L32.8519 3.39027C33.4657 4.00325 33.9527 4.73104 34.2849 5.53236C34.6171 6.33368 34.7881 7.19273 34.7881 8.06019C34.7881 8.92765 34.6171 9.78671 34.2849 10.588C33.9527 11.3893 33.4657 12.1171 32.8519 12.7301L20.1619 25.4201C19.8599 25.7239 19.5007 25.965 19.1052 26.1295C18.7096 26.2941 18.2854 26.379 17.8569 26.379C17.4285 26.379 17.0043 26.2941 16.6087 26.1295C16.2131 25.965 15.854 25.7239 15.5519 25.4201L2.86194 12.7301C2.24814 12.1171 1.76124 11.3893 1.42902 10.588C1.09679 9.78671 0.925781 8.92765 0.925781 8.06019C0.925781 7.19273 1.09679 6.33368 1.42902 5.53236C1.76124 4.73104 2.24814 4.00325 2.86194 3.39027V3.39027C3.47614 2.77317 4.2062 2.28349 5.01019 1.94935C5.81419 1.61522 6.67627 1.44301 7.54694 1.44301C8.4176 1.44301 9.27968 1.61522 10.0837 1.94935C10.8877 2.28349 11.6177 2.77317 12.2319 3.39027L15.452 6.64027C15.7624 6.96021 16.1338 7.21462 16.5444 7.38832C16.9549 7.56202 17.3962 7.6515 17.842 7.6515C18.2878 7.6515 18.729 7.56202 19.1395 7.38832C19.5501 7.21462 19.9215 6.96021 20.2319 6.64027L23.3019 3.42006C23.9074 2.77983 24.635 2.2678 25.4419 1.91371C26.2488 1.55962 27.1185 1.37065 27.9995 1.35853C28.8806 1.34641 29.7551 1.51114 30.5714 1.84291C31.3877 2.17467 32.1292 2.66685 32.752 3.29017V3.29017Z"
-                                                        stroke="#3F3F3F"
-                                                        stroke-width="1.5"
-                                                        stroke-miterlimit="10"
-                                                    />
-                                                </svg>
-                                            </button>
-                                            <h5><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h5>
-                                            <hr />
-                                            <div class="product-details">
-                                                <div>
-                                                    <a class="order-btn" data-bs-toggle="modal" data-bs-target="#gallery"><button>مشاهده</button></a>
-                                                </div>
-                                                <div>
-                                                    <a href="" class="shop-btn">
-                                                        <button>
-                                                            <img src="{% static 'images/bag-black.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ تومان</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="col-xl-4 col-md-6">
-                                        <div class="product-box">
-                                            <a href="" class="product-img-holder">
-                                                <img class="active" src="{% static 'images/products/product-img.png' %}" alt="" />
-                                                <img src="{% static 'images/products/product-img-1.png' %}" alt="" />
-                                                <img src="{% static 'images/products/product-img-2.png' %}" alt="" />
-                                            </a>
-                                            <button class="like" data-like="false">
-                                                <svg width="36" height="28" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M32.752 3.29017L32.8519 3.39027C33.4657 4.00325 33.9527 4.73104 34.2849 5.53236C34.6171 6.33368 34.7881 7.19273 34.7881 8.06019C34.7881 8.92765 34.6171 9.78671 34.2849 10.588C33.9527 11.3893 33.4657 12.1171 32.8519 12.7301L20.1619 25.4201C19.8599 25.7239 19.5007 25.965 19.1052 26.1295C18.7096 26.2941 18.2854 26.379 17.8569 26.379C17.4285 26.379 17.0043 26.2941 16.6087 26.1295C16.2131 25.965 15.854 25.7239 15.5519 25.4201L2.86194 12.7301C2.24814 12.1171 1.76124 11.3893 1.42902 10.588C1.09679 9.78671 0.925781 8.92765 0.925781 8.06019C0.925781 7.19273 1.09679 6.33368 1.42902 5.53236C1.76124 4.73104 2.24814 4.00325 2.86194 3.39027V3.39027C3.47614 2.77317 4.2062 2.28349 5.01019 1.94935C5.81419 1.61522 6.67627 1.44301 7.54694 1.44301C8.4176 1.44301 9.27968 1.61522 10.0837 1.94935C10.8877 2.28349 11.6177 2.77317 12.2319 3.39027L15.452 6.64027C15.7624 6.96021 16.1338 7.21462 16.5444 7.38832C16.9549 7.56202 17.3962 7.6515 17.842 7.6515C18.2878 7.6515 18.729 7.56202 19.1395 7.38832C19.5501 7.21462 19.9215 6.96021 20.2319 6.64027L23.3019 3.42006C23.9074 2.77983 24.635 2.2678 25.4419 1.91371C26.2488 1.55962 27.1185 1.37065 27.9995 1.35853C28.8806 1.34641 29.7551 1.51114 30.5714 1.84291C31.3877 2.17467 32.1292 2.66685 32.752 3.29017V3.29017Z"
-                                                        stroke="#3F3F3F"
-                                                        stroke-width="1.5"
-                                                        stroke-miterlimit="10"
-                                                    />
-                                                </svg>
-                                            </button>
-                                            <h5><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h5>
-                                            <hr />
-                                            <div class="product-details">
-                                                <div>
-                                                    <a class="order-btn" data-bs-toggle="modal" data-bs-target="#gallery"><button>مشاهده</button></a>
-                                                </div>
-                                                <div>
-                                                    <a href="" class="shop-btn">
-                                                        <button>
-                                                            <img src="{% static 'images/bag-black.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ تومان</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="col-xl-4 col-md-6">
-                                        <div class="product-box">
-                                            <a href="" class="product-img-holder">
-                                                <img class="active" src="{% static 'images/products/product-img.png' %}" alt="" />
-                                                <img src="{% static 'images/products/product-img-1.png' %}" alt="" />
-                                                <img src="{% static 'images/products/product-img-2.png' %}" alt="" />
-                                            </a>
-                                            <button class="like" data-like="false">
-                                                <svg width="36" height="28" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M32.752 3.29017L32.8519 3.39027C33.4657 4.00325 33.9527 4.73104 34.2849 5.53236C34.6171 6.33368 34.7881 7.19273 34.7881 8.06019C34.7881 8.92765 34.6171 9.78671 34.2849 10.588C33.9527 11.3893 33.4657 12.1171 32.8519 12.7301L20.1619 25.4201C19.8599 25.7239 19.5007 25.965 19.1052 26.1295C18.7096 26.2941 18.2854 26.379 17.8569 26.379C17.4285 26.379 17.0043 26.2941 16.6087 26.1295C16.2131 25.965 15.854 25.7239 15.5519 25.4201L2.86194 12.7301C2.24814 12.1171 1.76124 11.3893 1.42902 10.588C1.09679 9.78671 0.925781 8.92765 0.925781 8.06019C0.925781 7.19273 1.09679 6.33368 1.42902 5.53236C1.76124 4.73104 2.24814 4.00325 2.86194 3.39027V3.39027C3.47614 2.77317 4.2062 2.28349 5.01019 1.94935C5.81419 1.61522 6.67627 1.44301 7.54694 1.44301C8.4176 1.44301 9.27968 1.61522 10.0837 1.94935C10.8877 2.28349 11.6177 2.77317 12.2319 3.39027L15.452 6.64027C15.7624 6.96021 16.1338 7.21462 16.5444 7.38832C16.9549 7.56202 17.3962 7.6515 17.842 7.6515C18.2878 7.6515 18.729 7.56202 19.1395 7.38832C19.5501 7.21462 19.9215 6.96021 20.2319 6.64027L23.3019 3.42006C23.9074 2.77983 24.635 2.2678 25.4419 1.91371C26.2488 1.55962 27.1185 1.37065 27.9995 1.35853C28.8806 1.34641 29.7551 1.51114 30.5714 1.84291C31.3877 2.17467 32.1292 2.66685 32.752 3.29017V3.29017Z"
-                                                        stroke="#3F3F3F"
-                                                        stroke-width="1.5"
-                                                        stroke-miterlimit="10"
-                                                    />
-                                                </svg>
-                                            </button>
-                                            <h5><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h5>
-                                            <hr />
-                                            <div class="product-details">
-                                                <div>
-                                                    <a class="order-btn" data-bs-toggle="modal" data-bs-target="#gallery"><button>مشاهده</button></a>
-                                                </div>
-                                                <div>
-                                                    <a href="" class="shop-btn">
-                                                        <button>
-                                                            <img src="{% static 'images/bag-black.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ تومان</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="col-xl-4 col-md-6">
-                                        <div class="product-box">
-                                            <a href="" class="product-img-holder">
-                                                <img class="active" src="{% static 'images/products/product-img.png' %}" alt="" />
-                                                <img src="{% static 'images/products/product-img-1.png' %}" alt="" />
-                                                <img src="{% static 'images/products/product-img-2.png' %}" alt="" />
-                                            </a>
-                                            <button class="like" data-like="false">
-                                                <svg width="36" height="28" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M32.752 3.29017L32.8519 3.39027C33.4657 4.00325 33.9527 4.73104 34.2849 5.53236C34.6171 6.33368 34.7881 7.19273 34.7881 8.06019C34.7881 8.92765 34.6171 9.78671 34.2849 10.588C33.9527 11.3893 33.4657 12.1171 32.8519 12.7301L20.1619 25.4201C19.8599 25.7239 19.5007 25.965 19.1052 26.1295C18.7096 26.2941 18.2854 26.379 17.8569 26.379C17.4285 26.379 17.0043 26.2941 16.6087 26.1295C16.2131 25.965 15.854 25.7239 15.5519 25.4201L2.86194 12.7301C2.24814 12.1171 1.76124 11.3893 1.42902 10.588C1.09679 9.78671 0.925781 8.92765 0.925781 8.06019C0.925781 7.19273 1.09679 6.33368 1.42902 5.53236C1.76124 4.73104 2.24814 4.00325 2.86194 3.39027V3.39027C3.47614 2.77317 4.2062 2.28349 5.01019 1.94935C5.81419 1.61522 6.67627 1.44301 7.54694 1.44301C8.4176 1.44301 9.27968 1.61522 10.0837 1.94935C10.8877 2.28349 11.6177 2.77317 12.2319 3.39027L15.452 6.64027C15.7624 6.96021 16.1338 7.21462 16.5444 7.38832C16.9549 7.56202 17.3962 7.6515 17.842 7.6515C18.2878 7.6515 18.729 7.56202 19.1395 7.38832C19.5501 7.21462 19.9215 6.96021 20.2319 6.64027L23.3019 3.42006C23.9074 2.77983 24.635 2.2678 25.4419 1.91371C26.2488 1.55962 27.1185 1.37065 27.9995 1.35853C28.8806 1.34641 29.7551 1.51114 30.5714 1.84291C31.3877 2.17467 32.1292 2.66685 32.752 3.29017V3.29017Z"
-                                                        stroke="#3F3F3F"
-                                                        stroke-width="1.5"
-                                                        stroke-miterlimit="10"
-                                                    />
-                                                </svg>
-                                            </button>
-                                            <h5><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h5>
-                                            <hr />
-                                            <div class="product-details">
-                                                <div>
-                                                    <a class="order-btn" data-bs-toggle="modal" data-bs-target="#gallery"><button>مشاهده</button></a>
-                                                </div>
-                                                <div>
-                                                    <a href="" class="shop-btn">
-                                                        <button>
-                                                            <img src="{% static 'images/bag-black.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ تومان</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
+                                    {% endfor %}
                                 </div>
                                 <div class="text-center">
                                     <img src="{% static 'images/down-arrow.png' %}" alt="" class="down-arrow" />
