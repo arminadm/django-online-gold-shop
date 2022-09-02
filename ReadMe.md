@@ -1,6 +1,6 @@
 User:
-- [x] Login with sms #TODO should be checked
-- [x] Complete profile (required)
+- [x] Login with sms
+- [X] Complete profile (required)
 - [x] Code meli (should be verified with the algorithm)
 - [x] User can send products to any address #TODO should be checked
 - [x] Users have favorites products

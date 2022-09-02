@@ -1,12 +1,11 @@
-from django.urls import path, include
-from project.views import LoginClassView, SignUpClassView, ProfileClassView, LogoutClassView
+from django.urls import path
+from project.views import LoginClassView, ProfileClassView, LogoutClassView, IndexClassView
 
 app_name = 'registration'
 
 urlpatterns = [
-    path('', include('project.api.v1.urls')),
+    # path('', IndexClassView.as_view(), name='index'),
     path('login/', LoginClassView.as_view(), name='login'),
-    path('sign-up/', SignUpClassView.as_view(), name='sing-up'),
-    path('profile-edit/', ProfileClassView.as_view(), name='profile-edit'),
+    path('profile/', ProfileClassView.as_view(), name='profile-edit'),
     path('logout/', LogoutClassView.as_view(), name='logout'),
 ]

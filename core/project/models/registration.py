@@ -129,7 +129,7 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=255, blank=True, null=True)
     last_name = models.CharField(max_length=255, blank=True, null=True)
     national_code = models.CharField(max_length=10,unique=True, blank=True, null=True, validators=[validate_national_code])
-    birth_date = models.DateTimeField(blank=True, null=True)
+    birth_date = models.DateField(blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
     is_completed = models.BooleanField(default=False)
     created_date = models.DateTimeField(auto_now_add=True)
