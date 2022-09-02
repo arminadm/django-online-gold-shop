@@ -1,11 +1,12 @@
 from django.db import models
 from PIL import Image
 from .registration import User
+from django.template.defaultfilters import slugify
 
 # Create your models here.
 class Products(models.Model):
     name = models.CharField(max_length=400, blank=False, null=False)
-    slug = models.SlugField(max_length=400, blank=False, null=False)
+    slug = models.SlugField(max_length=400,blank=True, null=True, unique=True)
     description = models.TextField()
     price = models.IntegerField(null=True, blank=True)
     quantity = models.IntegerField(null=True, blank=True)
@@ -16,6 +17,11 @@ class Products(models.Model):
     popularity = models.IntegerField(default=0)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        return super().save(*args, **kwargs)
 
     class Meta: 
         verbose_name = "محصول"
@@ -38,7 +44,7 @@ class Category(models.Model):
 
 class Photo(models.Model):
     products = models.ForeignKey(Products, on_delete=models.CASCADE, related_name='photos')
-    photo = models.ImageField(upload_to ='photos/')
+    photo = models.ImageField(upload_to ='project/static/photos/')
 
     class Meta: 
         verbose_name = "عکس"
@@ -60,8 +66,8 @@ class Favorite(models.Model):
     updated_date = models.DateTimeField(auto_now=True) 
 
 class ShopCart(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    product = models.ForeignKey(Products, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user')
+    product = models.ForeignKey(Products, on_delete=models.CASCADE, related_name='product')
     status = models.BooleanField(default=True)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True) 

@@ -8,7 +8,7 @@ Product:
 - [x] Category for products 
 - [x] Every product has image, description, amount, title
 Payment:
-- [ ] Shop cart
+- [X] Shop cart
 - [ ] Payment gateway = ZarinPal
 - [ ] Gold price should be hourly updated
 - [ ] Every hour shop cart should be updated 
