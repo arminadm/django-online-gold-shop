@@ -1,5 +1,5 @@
 from django.contrib import admin
-from project.models import Category, Products, Photo
+from project.models import Category, Products, Photo, Favorite, ShopCart
 
 # Register your models here.
 class PhotoAdmin(admin.StackedInline):
@@ -22,3 +22,16 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name', 'created_date', 'updated_date']
     search_fields = ['name']
 admin.site.register(Category, CategoryAdmin)
+
+class ShopCartAdmin(admin.ModelAdmin):
+    date_hierarchy = 'created_date'
+    list_display = ['user', 'product', 'status', 'updated_date']
+    list_filter= ['status']
+    search_fields = ['user', 'product']
+admin.site.register(ShopCart, ShopCartAdmin)
+
+class FavoriteAdmin(admin.ModelAdmin):
+    date_hierarchy = 'created_date'
+    list_display = ['user', 'product', 'updated_date']
+    search_fields = ['user', 'product']
+admin.site.register(Favorite, FavoriteAdmin)
