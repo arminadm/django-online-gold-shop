@@ -1656,9 +1656,10 @@
                                 <div id="user-information">
                                     <div class="main-panel-box">
                                         <div class="row">
+                                            <form action="/registration/profile/" method="post"> {% csrf_token %}
                                             <div class="col-lg-5">
                                                 <div class="input-group mb-3">
-                                                    <input type="text" class="form-control" placeholder="نام" aria-label="Username" aria-describedby="basic-addon1" />
+                                                    <input type="text" class="form-control" name="fname" placeholder="نام" value="{{ fname }}" aria-label="Username" aria-describedby="basic-addon1" />
                                                     <svg width="25" height="25" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path
                                                             d="M13.0734 8.28126V14.1814C13.0734 14.9647 12.4385 15.5996 11.6552 15.5996H2.41814C1.63492 15.5996 1 14.9647 1 14.1814V5.26989C1 4.48667 1.63492 3.85175 2.41814 3.85175H6.2318M6.83547 6.93315L8.24403 8.28126M14.8674 3.56682L9.14921 9.50866C8.95272 9.71284 8.69957 9.85347 8.4224 9.91242L7.50625 10.1073C6.46644 10.3284 5.56199 9.3692 5.84383 8.34417L6.13371 7.2899C6.19803 7.05598 6.32128 6.84247 6.49168 6.66979L12.128 0.958057C12.6579 0.421037 13.5155 0.392942 14.0795 0.894127L14.7876 1.52344C15.3895 2.05838 15.4257 2.98659 14.8674 3.56682Z"
@@ -1672,7 +1673,7 @@
                                             </div>
                                             <div class="col-lg-7">
                                                 <div class="input-group mb-3">
-                                                    <input type="text" class="form-control" placeholder="نام خانوادگی" aria-label="Username" aria-describedby="basic-addon1" />
+                                                    <input type="text" class="form-control" name="lname" placeholder="نام خانوادگی" value="{{ lname }}" aria-label="Username" aria-describedby="basic-addon1" />
                                                     <svg width="25" height="25" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path
                                                             d="M13.0734 8.28126V14.1814C13.0734 14.9647 12.4385 15.5996 11.6552 15.5996H2.41814C1.63492 15.5996 1 14.9647 1 14.1814V5.26989C1 4.48667 1.63492 3.85175 2.41814 3.85175H6.2318M6.83547 6.93315L8.24403 8.28126M14.8674 3.56682L9.14921 9.50866C8.95272 9.71284 8.69957 9.85347 8.4224 9.91242L7.50625 10.1073C6.46644 10.3284 5.56199 9.3692 5.84383 8.34417L6.13371 7.2899C6.19803 7.05598 6.32128 6.84247 6.49168 6.66979L12.128 0.958057C12.6579 0.421037 13.5155 0.392942 14.0795 0.894127L14.7876 1.52344C15.3895 2.05838 15.4257 2.98659 14.8674 3.56682Z"
@@ -1686,7 +1687,7 @@
                                             </div>
                                             <div class="col-lg-5">
                                                 <div class="input-group mb-3">
-                                                    <input type="text" class="form-control" placeholder="کد ملی" aria-label="Username" aria-describedby="basic-addon1" />
+                                                    <input type="number" class="form-control" name="nationalCode" placeholder="کد ملی" value="{{ nationalCode }}" aria-label="Username" aria-describedby="basic-addon1" />
                                                     <svg width="25" height="25" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path
                                                             d="M13.0734 8.28126V14.1814C13.0734 14.9647 12.4385 15.5996 11.6552 15.5996H2.41814C1.63492 15.5996 1 14.9647 1 14.1814V5.26989C1 4.48667 1.63492 3.85175 2.41814 3.85175H6.2318M6.83547 6.93315L8.24403 8.28126M14.8674 3.56682L9.14921 9.50866C8.95272 9.71284 8.69957 9.85347 8.4224 9.91242L7.50625 10.1073C6.46644 10.3284 5.56199 9.3692 5.84383 8.34417L6.13371 7.2899C6.19803 7.05598 6.32128 6.84247 6.49168 6.66979L12.128 0.958057C12.6579 0.421037 13.5155 0.392942 14.0795 0.894127L14.7876 1.52344C15.3895 2.05838 15.4257 2.98659 14.8674 3.56682Z"
@@ -1700,7 +1701,7 @@
                                             </div>
                                             <div class="col-lg-7">
                                                 <div class="input-group mb-3">
-                                                    <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
+                                                    <input type="date" name="date" class="form-control" placeholder="تاریخ تولد" aria-label="Username" value="{{ date }}" aria-describedby="basic-addon1" />
                                                     <svg width="25" height="25" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path
                                                             d="M13.0734 8.28126V14.1814C13.0734 14.9647 12.4385 15.5996 11.6552 15.5996H2.41814C1.63492 15.5996 1 14.9647 1 14.1814V5.26989C1 4.48667 1.63492 3.85175 2.41814 3.85175H6.2318M6.83547 6.93315L8.24403 8.28126M14.8674 3.56682L9.14921 9.50866C8.95272 9.71284 8.69957 9.85347 8.4224 9.91242L7.50625 10.1073C6.46644 10.3284 5.56199 9.3692 5.84383 8.34417L6.13371 7.2899C6.19803 7.05598 6.32128 6.84247 6.49168 6.66979L12.128 0.958057C12.6579 0.421037 13.5155 0.392942 14.0795 0.894127L14.7876 1.52344C15.3895 2.05838 15.4257 2.98659 14.8674 3.56682Z"
@@ -1714,7 +1715,7 @@
                                             </div>
                                             <div class="col-lg-5">
                                                 <div class="input-group mb-3">
-                                                    <input type="text" class="form-control" placeholder="شماره همراه" aria-label="Username" aria-describedby="basic-addon1" />
+                                                    <input type="tel" name="phone" class="form-control" placeholder="شماره همراه" aria-label="Username" aria-describedby="basic-addon1" value="{{ phone }}" readonly/>
                                                     <svg width="25" height="25" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path
                                                             d="M13.0734 8.28126V14.1814C13.0734 14.9647 12.4385 15.5996 11.6552 15.5996H2.41814C1.63492 15.5996 1 14.9647 1 14.1814V5.26989C1 4.48667 1.63492 3.85175 2.41814 3.85175H6.2318M6.83547 6.93315L8.24403 8.28126M14.8674 3.56682L9.14921 9.50866C8.95272 9.71284 8.69957 9.85347 8.4224 9.91242L7.50625 10.1073C6.46644 10.3284 5.56199 9.3692 5.84383 8.34417L6.13371 7.2899C6.19803 7.05598 6.32128 6.84247 6.49168 6.66979L12.128 0.958057C12.6579 0.421037 13.5155 0.392942 14.0795 0.894127L14.7876 1.52344C15.3895 2.05838 15.4257 2.98659 14.8674 3.56682Z"
@@ -1728,7 +1729,7 @@
                                             </div>
                                             <div class="col-lg-7">
                                                 <div class="input-group mb-3">
-                                                    <input type="email" class="form-control" placeholder="ایمیل" aria-label="Username" aria-describedby="basic-addon1" />
+                                                    <input type="email" name="email" class="form-control" placeholder="ایمیل" aria-label="Username" value="{{ email }}" aria-describedby="basic-addon1" />
                                                     <svg width="25" height="25" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path
                                                             d="M13.0734 8.28126V14.1814C13.0734 14.9647 12.4385 15.5996 11.6552 15.5996H2.41814C1.63492 15.5996 1 14.9647 1 14.1814V5.26989C1 4.48667 1.63492 3.85175 2.41814 3.85175H6.2318M6.83547 6.93315L8.24403 8.28126M14.8674 3.56682L9.14921 9.50866C8.95272 9.71284 8.69957 9.85347 8.4224 9.91242L7.50625 10.1073C6.46644 10.3284 5.56199 9.3692 5.84383 8.34417L6.13371 7.2899C6.19803 7.05598 6.32128 6.84247 6.49168 6.66979L12.128 0.958057C12.6579 0.421037 13.5155 0.392942 14.0795 0.894127L14.7876 1.52344C15.3895 2.05838 15.4257 2.98659 14.8674 3.56682Z"
@@ -1740,159 +1741,13 @@
                                                     </svg>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-5">
-                                                <div class="user-security-box">
-                                                    <div class="security-box">
-                                                        <span class="security-code">کد امنیتی:</span>
-                                                        <ul>
-                                                            <li class="code-box">
-                                                                <div class="input-group mb-3">
-                                                                    <input type="text" class="form-control text-center" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
-                                                                </div>
-                                                            </li>
-                                                            <li class="code-box">
-                                                                <div class="input-group mb-3">
-                                                                    <input type="text" class="form-control text-center" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
-                                                                </div>
-                                                            </li>
-                                                            <li class="code-box">
-                                                                <div class="input-group mb-3">
-                                                                    <input type="text" class="form-control text-center" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
-                                                                </div>
-                                                            </li>
-                                                            <li class="code-box">
-                                                                <div class="input-group mb-3">
-                                                                    <input type="text" class="form-control text-center" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div>
-                                                        <button class="panel-btn">تایید کد</button>
-                                                    </div>
-                                                </div>
-                                                <div class="relationship-box">
-                                                    <span class="rel-text">وظعیت تاهل:</span>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                                                        <label class="form-check-label" for="flexRadioDefault1">
-                                                            متاهل
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked />
-                                                        <label class="form-check-label" for="flexRadioDefault2">
-                                                            مجرد
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-7">
-                                                <span class="explain">لورم ایپسوم متن ساختگی با تولید سادگیر</span>
-                                                <div class="input-group check-input mb-3">
-                                                    <div class="input-group-text">
-                                                        <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" />
-                                                    </div>
-                                                    <span>انتخاب پسورد</span>
-                                                </div>
-                                                <div class="input-group password mb-3">
-                                                    <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
-                                                </div>
-                                                <ul>
-                                                    <li class="pass-power"></li>
-                                                    <li class="pass-power"></li>
-                                                    <li class="pass-power"></li>
-                                                    <li class="pass-power"></li>
-                                                </ul>
-                                                <span class="pass-text">ضعیف</span>
-                                                <div class="input-group password mb-3">
-                                                    <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" />
-                                                </div>
-                                                <ul>
-                                                    <li class="pass-power"></li>
-                                                    <li class="pass-power"></li>
-                                                    <li class="pass-power"></li>
-                                                    <li class="pass-power"></li>
-                                                </ul>
-                                                <span class="pass-text">ضعیف</span>
-                                                <span class="pass-explain-strong d-block">استفاده از حروف برگ و کوچک</span>
-                                                <span class="pass-explain">استفاده از اعداد</span>
-                                            </div>
-                                            <div class="col-lg-6 mt-4 mt-lg-0">
-                                                <div class="factor">
-                                                    <div class="input-group check-input mb-3">
-                                                        <div class="input-group-text">
-                                                            <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" />
-                                                        </div>
-                                                        <span>فاکتور بنام دیگری ثبت شود</span>
-                                                    </div>
-                                                </div>
-                                                <div class="input-group new-factor mb-3">
-                                                    <input type="text" class="form-control" placeholder="نام" aria-label="Username" aria-describedby="basic-addon1" />
-                                                    <svg width="25" height="25" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M13.0734 8.28126V14.1814C13.0734 14.9647 12.4385 15.5996 11.6552 15.5996H2.41814C1.63492 15.5996 1 14.9647 1 14.1814V5.26989C1 4.48667 1.63492 3.85175 2.41814 3.85175H6.2318M6.83547 6.93315L8.24403 8.28126M14.8674 3.56682L9.14921 9.50866C8.95272 9.71284 8.69957 9.85347 8.4224 9.91242L7.50625 10.1073C6.46644 10.3284 5.56199 9.3692 5.84383 8.34417L6.13371 7.2899C6.19803 7.05598 6.32128 6.84247 6.49168 6.66979L12.128 0.958057C12.6579 0.421037 13.5155 0.392942 14.0795 0.894127L14.7876 1.52344C15.3895 2.05838 15.4257 2.98659 14.8674 3.56682Z"
-                                                            stroke="#C1C1C1"
-                                                            stroke-width="0.709072"
-                                                            stroke-linecap="round"
-                                                            stroke-linejoin="round"
-                                                        />
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="input-group new-factor mb-3">
-                                                    <input type="text" class="form-control" placeholder="نام خانوادگی" aria-label="Username" aria-describedby="basic-addon1" />
-                                                    <svg width="25" height="25" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M13.0734 8.28126V14.1814C13.0734 14.9647 12.4385 15.5996 11.6552 15.5996H2.41814C1.63492 15.5996 1 14.9647 1 14.1814V5.26989C1 4.48667 1.63492 3.85175 2.41814 3.85175H6.2318M6.83547 6.93315L8.24403 8.28126M14.8674 3.56682L9.14921 9.50866C8.95272 9.71284 8.69957 9.85347 8.4224 9.91242L7.50625 10.1073C6.46644 10.3284 5.56199 9.3692 5.84383 8.34417L6.13371 7.2899C6.19803 7.05598 6.32128 6.84247 6.49168 6.66979L12.128 0.958057C12.6579 0.421037 13.5155 0.392942 14.0795 0.894127L14.7876 1.52344C15.3895 2.05838 15.4257 2.98659 14.8674 3.56682Z"
-                                                            stroke="#C1C1C1"
-                                                            stroke-width="0.709072"
-                                                            stroke-linecap="round"
-                                                            stroke-linejoin="round"
-                                                        />
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="input-group new-factor mb-3">
-                                                    <input type="text" class="form-control" placeholder="کد ملی" aria-label="Username" aria-describedby="basic-addon1" />
-                                                    <svg width="25" height="25" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M13.0734 8.28126V14.1814C13.0734 14.9647 12.4385 15.5996 11.6552 15.5996H2.41814C1.63492 15.5996 1 14.9647 1 14.1814V5.26989C1 4.48667 1.63492 3.85175 2.41814 3.85175H6.2318M6.83547 6.93315L8.24403 8.28126M14.8674 3.56682L9.14921 9.50866C8.95272 9.71284 8.69957 9.85347 8.4224 9.91242L7.50625 10.1073C6.46644 10.3284 5.56199 9.3692 5.84383 8.34417L6.13371 7.2899C6.19803 7.05598 6.32128 6.84247 6.49168 6.66979L12.128 0.958057C12.6579 0.421037 13.5155 0.392942 14.0795 0.894127L14.7876 1.52344C15.3895 2.05838 15.4257 2.98659 14.8674 3.56682Z"
-                                                            stroke="#C1C1C1"
-                                                            stroke-width="0.709072"
-                                                            stroke-linecap="round"
-                                                            stroke-linejoin="round"
-                                                        />
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="input-group new-factor mb-3">
-                                                    <input type="text" class="form-control" placeholder="شماره همراه" aria-label="Username" aria-describedby="basic-addon1" />
-                                                    <svg width="25" height="25" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M13.0734 8.28126V14.1814C13.0734 14.9647 12.4385 15.5996 11.6552 15.5996H2.41814C1.63492 15.5996 1 14.9647 1 14.1814V5.26989C1 4.48667 1.63492 3.85175 2.41814 3.85175H6.2318M6.83547 6.93315L8.24403 8.28126M14.8674 3.56682L9.14921 9.50866C8.95272 9.71284 8.69957 9.85347 8.4224 9.91242L7.50625 10.1073C6.46644 10.3284 5.56199 9.3692 5.84383 8.34417L6.13371 7.2899C6.19803 7.05598 6.32128 6.84247 6.49168 6.66979L12.128 0.958057C12.6579 0.421037 13.5155 0.392942 14.0795 0.894127L14.7876 1.52344C15.3895 2.05838 15.4257 2.98659 14.8674 3.56682Z"
-                                                            stroke="#C1C1C1"
-                                                            stroke-width="0.709072"
-                                                            stroke-linecap="round"
-                                                            stroke-linejoin="round"
-                                                        />
-                                                    </svg>
-                                                </div>
-                                            </div>
+
                                             <div class="accept-condition">
-                                                <div class="input-group check-input accept-rule">
-                                                    <div class="input-group-text">
-                                                        <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" />
-                                                    </div>
-                                                    <span>پذیرفتن شرایط و ضوابط</span>
-                                                </div>
                                                 <div>
-                                                    <button class="panel-btn save-btn">ذخیره تغیرات</button>
+                                                    <button class="panel-btn save-btn" type="submit">ذخیره تغیرات</button>
                                                 </div>
                                             </div>
+                                        </form>
                                         </div>
                                     </div>
                                 </div>

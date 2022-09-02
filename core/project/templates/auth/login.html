@@ -20,11 +20,12 @@
             <section>
                 <div class="box">
                     <img src="{% static 'images/logosvg.svg' %}" alt="">
-                    <input type="text" placeholder="شماره همراه">
+                    <form action="/registration/login/" method="post">{% csrf_token %}
+                    <input type="tel" placeholder="شماره همراه" name="phone">
                     <div class="buttons">
-                        <button class="btn btn-login" type="button">ورود</button>
-                        <button class="btn btn-sign-up" type="button">ثبت نام</button>
+                        <button class="btn btn-login" type="submit">ورود - ثبت نام</button>
                     </div>
+                </form>
                 </div>
             </section>
          </main>

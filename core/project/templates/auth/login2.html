@@ -20,25 +20,25 @@
             <section>
                 <div class="box">
                     <img src="{% static 'images/logosvg.svg' %}" alt="">
-                    <input class="main-input mb-0" type="password" placeholder="کلمه ورود">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
-                            اسفاده از کد امنیتی یکبار مصرف
+                            کد ارسال شده را وارد کنید
                         </label>
                       </div>
                       <div class="password-phone">
                         <span>کد امنیتی:</span>
+                        <form action="/registration/login/" method="post">{% csrf_token %}
                         <div class="inputs">
-                            <input class="input" type="text">
-                            <input class="input" type="text">
-                            <input class="input" type="text">
-                            <input class="input" type="text">
+                            <input class="input" type="number" name="code1">
+                            <input class="input" type="number" name="code2">
+                            <input class="input" type="number" name="code3">
+                            <input class="input" type="number" name="code4">
                         </div>
                       </div>
                     <div class="buttons text-end">
-                        <button class="btn btn-login" type="button">تایید</button>
+                        <button class="btn btn-login" type="submit">تایید</button>
                     </div>
+                </form>
                 </div>
             </section>
          </main>
