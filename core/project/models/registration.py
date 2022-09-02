@@ -125,7 +125,7 @@ def validate_zip_code(value):
 
 class Profile(models.Model):
     # we can have access to phone number via user foreign key
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profileUser')
     first_name = models.CharField(max_length=255, blank=True, null=True)
     last_name = models.CharField(max_length=255, blank=True, null=True)
     national_code = models.CharField(max_length=10,unique=True, blank=True, null=True, validators=[validate_national_code])
@@ -143,7 +143,7 @@ class Profile(models.Model):
         return f"{self.user.id} - {self.user.phone} - {self.first_name} - {self.last_name}"
 
 class Address(models.Model):
-    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(Profile, on_delete=models.DO_NOTHING, related_name='profileAdress')
     state = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
     zip_code = models.IntegerField(validators=[validate_zip_code])

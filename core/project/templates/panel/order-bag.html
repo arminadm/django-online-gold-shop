@@ -43,14 +43,15 @@
                                             </a>
                                         </div>
                                         <ul>
+                                            {% for item in shopcart %}
                                             <li>
                                                 <div>
                                                     <img src="{% static 'images/story.png' %}" alt="" />
                                                 </div>
                                                 <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
+                                                    <h5 class="pro-title">{{ item.product.name }}</h5>
                                                     <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
+                                                    <span class="price">{{ item.product.price }}<span>تومان</span></span>
                                                     <a href="">
                                                         <button class="btn btn-buy" type="button">
                                                             مشاهده
@@ -59,102 +60,7 @@
                                                     </a>
                                                 </div>
                                             </li>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
+                                            {% endfor %}
                                         </ul>
                                         <hr />
                                         <div class="final-price">
@@ -166,7 +72,7 @@
                                                 </a>
                                             </div>
                                             <div>
-                                                <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
+                                                <span class="price">{{ price }}<span>تومان</span></span>
                                             </div>
                                         </div>
                                     </div>
@@ -1649,111 +1555,32 @@
                                 <div id="order-bag">
                                     <div class="main-panel-box">
                                         <div class="row">
+                                            {% for item in shopcart %}
                                             <div class="col-lg-6">
                                                 <div class="order-bag-detail">
                                                     <div class="order-bag-img">
                                                         <img src="{% static 'images/order-bag.svg' %}" alt="" />
                                                     </div>
                                                     <div class="order-bag-info">
-                                                        <span class="item-name">لورم ایپسوم متن ساختگی با تولید سادگیر</span>
+                                                        <span class="item-name">{{ item.product.name }}</span>
 
                                                         <button class="see-more">
                                                             <span>مشاهده</span>
                                                             <img src="{% static 'images/left-arrow.svg' %}" alt="" />
                                                         </button>
-                                                        <button class="bag-btn">
-                                                            <img src="{% static 'images/bag-white.svg' %}" alt="" />
-                                                        </button>
-                                                        <span class="price">۴۵.۰۰۰.۰۰۰</span>
+                                                        <span class="price">{{ item.product.price }}</span>
                                                         <span>تومان</span>
                                                         <div class="del-product">
-                                                            <button>
+                                                            <!-- <button>
                                                                 <img src="{% static 'images/delete-icon.svg' %}" alt="" />
                                                                 <span>حذف محصول</span>
-                                                            </button>
+                                                            </button> -->
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6">
-                                                <div class="order-bag-detail">
-                                                    <div class="order-bag-img">
-                                                        <img src="{% static 'images/order-bag.svg' %}" alt="" />
-                                                    </div>
-                                                    <div class="order-bag-info">
-                                                        <span class="item-name">لورم ایپسوم متن ساختگی با تولید سادگیر</span>
-
-                                                        <button class="see-more">
-                                                            <span>مشاهده</span>
-                                                            <img src="{% static 'images/left-arrow.svg' %}" alt="" />
-                                                        </button>
-                                                        <button class="bag-btn">
-                                                            <img src="{% static 'images/bag-white.svg' %}" alt="" />
-                                                        </button>
-                                                        <span class="price">۴۵.۰۰۰.۰۰۰</span>
-                                                        <span>تومان</span>
-                                                        <div class="del-product">
-                                                            <button>
-                                                                <img src="{% static 'images/delete-icon.svg' %}" alt="" />
-                                                                <span>حذف محصول</span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="order-bag-detail">
-                                                    <div class="order-bag-img">
-                                                        <img src="{% static 'images/order-bag.svg' %}" alt="" />
-                                                    </div>
-                                                    <div class="order-bag-info">
-                                                        <span class="item-name">لورم ایپسوم متن ساختگی با تولید سادگیر</span>
-
-                                                        <button class="see-more">
-                                                            <span>مشاهده</span>
-                                                            <img src="{% static 'images/left-arrow.svg' %}" alt="" />
-                                                        </button>
-                                                        <button class="bag-btn">
-                                                            <img src="{% static 'images/bag-white.svg' %}" alt="" />
-                                                        </button>
-                                                        <span class="price">۴۵.۰۰۰.۰۰۰</span>
-                                                        <span>تومان</span>
-                                                        <div class="del-product">
-                                                            <button>
-                                                                <img src="{% static 'images/delete-icon.svg' %}" alt="" />
-                                                                <span>حذف محصول</span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="order-bag-detail">
-                                                    <div class="order-bag-img">
-                                                        <img src="{% static 'images/order-bag.svg' %}" alt="" />
-                                                    </div>
-                                                    <div class="order-bag-info">
-                                                        <span class="item-name">لورم ایپسوم متن ساختگی با تولید سادگیر</span>
-
-                                                        <button class="see-more">
-                                                            <span>مشاهده</span>
-                                                            <img src="{% static 'images/left-arrow.svg' %}" alt="" />
-                                                        </button>
-                                                        <button class="bag-btn">
-                                                            <img src="{% static 'images/bag-white.svg' %}" alt="" />
-                                                        </button>
-                                                        <span class="price">۴۵.۰۰۰.۰۰۰</span>
-                                                        <span>تومان</span>
-                                                        <div class="del-product">
-                                                            <button>
-                                                                <img src="{% static 'images/delete-icon.svg' %}" alt="" />
-                                                                <span>حذف محصول</span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="text-center">
+                                            {% endfor %}
+                                            <!-- <div class="text-center">
                                                 <button>
                                                     <span class="d-block mt-4 mb-1">تکمیل روند سفارش</span>
                                                     <img src="{% static 'images/down-arrow.png' %}" alt="" class="mt-2" />
@@ -1877,7 +1704,7 @@
                                                     </div>
                                                     <span>دریافت با مراجعه حظوری</span>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="text-center">
                                                 <button>
                                                     <span class="d-block mt-4 mb-1">انتخاب آدرس</span>
