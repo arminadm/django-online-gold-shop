@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('products/', include('project.urls.products')),
     path('registration/', include('project.urls.registration')),
+    path('payment/', include('project.urls.payment')),
     path('', IndexClassView.as_view(), name='index')
 ]

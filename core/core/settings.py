@@ -139,7 +139,7 @@ AUTH_USER_MODEL = 'project.User'
 AZ_IRANIAN_BANK_GATEWAYS = {
    'GATEWAYS': {
         'ZARINPAL': {
-           'MERCHANT_CODE': 'some',
+           'MERCHANT_CODE': 'HWx9GfTpNTBS6AUBA5gr0oarDXs40VNNHQw5',
            'SANDBOX': 1,  # 0 disable, 1 active
        },
    },

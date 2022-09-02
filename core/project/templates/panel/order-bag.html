@@ -1714,6 +1714,7 @@
                                             </div>
                                         </div>
                                         <div class="row align-items-center">
+                                            {% for item in address %}
                                             <div class="col-sm-1 col-2">
                                                 <div class="order-bag-icon">
                                                     <div class="form-check">
@@ -1725,25 +1726,25 @@
                                                 <div class="order-bag-address">
                                                     <div class="parrent-box">
                                                         <div class="child">
-                                                            <span>تهران</span>
+                                                            <span>{{ item.state }}</span>
                                                         </div>
                                                         <div class="child">
-                                                            <span>شهریار</span>
+                                                            <span>{{ item.city }}</span>
                                                         </div>
                                                         <div class="child">
-                                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،</p>
+                                                            <p>{{ item.detail }}</p>
                                                         </div>
                                                         <div class="child">
                                                             <span class="d-block address-info">کد پستی</span>
-                                                            <span>311421250</span>
+                                                            <span>{{ item.zip_code }}</span>
                                                         </div>
                                                         <div class="child">
                                                             <span class="d-block address-info">شماره تلفن</span>
-                                                            <span>0964252526</span>
+                                                            <span>{{ item.profileAddress.profileUser.phone }}</span>
                                                         </div>
                                                         <div class="child">
                                                             <span class="d-block address-info">نام و نام خانوادگی</span>
-                                                            <span>بهراد دهدشتی</span>
+                                                            <span>{{ item.profileAddress.first_name }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1759,57 +1760,17 @@
                                                     </button>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-1 col-2">
-                                                <div class="order-bag-icon">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-8 col-sm-11 col-10">
-                                                <div class="order-bag-address">
-                                                    <div class="parrent-box">
-                                                        <div class="child">
-                                                            <span>تهران</span>
-                                                        </div>
-                                                        <div class="child">
-                                                            <span>شهریار</span>
-                                                        </div>
-                                                        <div class="child">
-                                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،</p>
-                                                        </div>
-                                                        <div class="child">
-                                                            <span class="d-block address-info">کد پستی</span>
-                                                            <span>311421250</span>
-                                                        </div>
-                                                        <div class="child">
-                                                            <span class="d-block address-info">شماره تلفن</span>
-                                                            <span>0964252526</span>
-                                                        </div>
-                                                        <div class="child">
-                                                            <span class="d-block address-info">نام و نام خانوادگی</span>
-                                                            <span>بهراد دهدشتی</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="del-address">
-                                                    <button>
-                                                        <img src="{% static 'images/pen.svg' %}" alt="" class="add-address-img" />
-                                                    </button>
-                                                    <button class="d-flex align-items-center">
-                                                        <img src="{% static 'images/delete-icon.svg' %}" alt="" />
-                                                        <span>حذف آدرس</span>
-                                                    </button>
-                                                </div>
-                                            </div>
+                                            {% endfor %}
+                                            
                                         </div>
                                         <div class="text-center">
-                                            <button class="panel-btn">
+                                            <form action="/payment/pay/" method="post">{% csrf_token %}
+                                            <button class="panel-btn" type="submit">
                                                 <span>پرداخت</span>
                                                 <img src="{% static 'images/left-arrow.svg' %}" alt="" />
                                             </button>
+                                            </form>
+                                        </a>
                                         </div>
                                     </div>
                                 </div>
