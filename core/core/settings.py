@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'project.apps.ProjectConfig',
+    # payment
+    'azbankgateways'
 ]
 
 MIDDLEWARE = [
@@ -132,3 +134,22 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # user config
 AUTH_USER_MODEL = 'project.User'
+
+# bank gateway config
+AZ_IRANIAN_BANK_GATEWAYS = {
+   'GATEWAYS': {
+        'ZARINPAL': {
+           'MERCHANT_CODE': 'some',
+           'SANDBOX': 1,  # 0 disable, 1 active
+       },
+   },
+   'IS_SAMPLE_FORM_ENABLE': True,
+   'DEFAULT': 'ZARINPAL',
+   'CURRENCY': 'IRR', 
+   'TRACKING_CODE_QUERY_PARAM': 'tc', 
+   'TRACKING_CODE_LENGTH': 16, 
+   'SETTING_VALUE_READER_CLASS': 'azbankgateways.readers.DefaultReader',
+   'BANK_PRIORITIES': [
+       'ZARINPAL',
+   ],
+}
