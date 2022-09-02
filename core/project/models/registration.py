@@ -149,6 +149,8 @@ class Address(models.Model):
     zip_code = models.IntegerField(validators=[validate_zip_code])
     # address for this address
     detail = models.TextField()
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True) 
     
 
 @receiver(post_save, sender=User)
