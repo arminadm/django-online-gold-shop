@@ -1,17 +1,42 @@
-import profile
 from random import randint
-from django.http import Http404, HttpResponse, JsonResponse
+import requests
+from django.http import Http404, HttpResponse 
 from django.shortcuts import render, redirect
 from django.views.generic import View, TemplateView
-from project.forms import ProfileForm, SignUpForm
 from project.models import Profile, User
 from django.contrib.auth import login, logout, authenticate
 from django.core.exceptions import ValidationError
 from django.shortcuts import get_object_or_404
-
+from project.models.products import ShopCart
 # Create your views here.
 
 class IndexClassView(TemplateView):
+    url = 'http://api.navasan.tech/latest/?api_key=freeF8ECZhloSU5qk0eFnioqy30enQ1l&item=18ayar'    
+    
+    # api_response = requests.post(url)
+    
+    def get_context_data(self, **kwargs):
+        context = super(IndexClassView, self).get_context_data(**kwargs)
+        if self.request.user.is_authenticated:
+            context['user'] = self.request.user
+            context['profile'] = get_object_or_404(Profile, user = self.request.user)
+            shopcart = ShopCart.objects.filter(user=self.request.user)
+            total_price = 0
+            for item in shopcart:
+                total_price += item.product.price
+            context['shopcart'] = shopcart
+            context['price'] = total_price
+        api_response = {
+        "18ayar": {
+            "value": "1276600",
+            "change": 9000,
+            "timestamp": 1662276596,
+            "date": "1401-06-13 11:59:56"
+            }
+        }
+        context['gold_price'] = api_response['18ayar']['value']
+        return context
+       
     template_name= 'index.html'
 
 class LoginClassView(View):
@@ -90,4 +115,4 @@ class LogoutClassView(View):
             # TODO: redirect to bad request page
             return HttpResponse('Unauthorized', status=401)
         logout(request)
-        return HttpResponse('successfully logged out')
+        return redirect('/')
