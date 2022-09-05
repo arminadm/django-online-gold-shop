@@ -4,3 +4,4 @@ Pillow==9.2.0
 pytz==2022.1
 sqlparse==0.4.2
 az-iranian-bank-gateways == 1.6.18
+Faker
