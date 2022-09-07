@@ -153,9 +153,9 @@ function eventListener() {
             this.classList.add("mega-link-active");
         });
     });
-    document.querySelector("#search-show").addEventListener("click", function () {
-        document.querySelector("#searchBox").classList.add("search-active");
-    });
+    // document.querySelector("#search-show").addEventListener("click", function () {
+    //     document.querySelector("#searchBox").classList.add("search-active");
+    // });
     document.querySelector("#searchMobile").addEventListener("click", function () {
         document.querySelector("#searchBox").classList.add("search-active");
         console.log("yes");

@@ -1,8 +1,9 @@
-from itertools import product
 import logging
 from django.http import HttpResponse, Http404
 from azbankgateways import bankfactories, models as bank_models, default_settings as settings
+from project.models.registration import Profile
 from project.models.products import ShopCart
+from project.models.registration import Address
 from project.models.payment import Order
 from azbankgateways.exceptions import AZBankGatewaysException
 from azbankgateways.models import Bank
@@ -29,6 +30,7 @@ def payment(request):
             items = items + '\n--item: ' + str(item.product.name)
 
         request.session['items'] = items
+
         # در صورت تمایل اتصال این رکورد به رکورد فاکتور یا هر چیزی که بعدا بتوانید ارتباط بین محصول یا خدمات را با این
         # پرداخت برقرار کنید. 
         bank_record = bank.ready()
@@ -57,8 +59,8 @@ def callback_gateway_view(request):
         pk = str(bank_record).split('-')[0]
         transactionCode = str(bank_record).split('-')[1]
         this_transaction = get_object_or_404(Bank, pk=pk)
-        Order.objects.create(user = request.user, product=request.session['items'], transaction=this_transaction, code = transactionCode)
-        return HttpResponse("پرداخت با موفقیت انجام شد.")
+        Order.objects.create(user = request.user, product=request.session['items'],address = Address.objects.filter(user = get_object_or_404(Profile, user = request.user)).first() ,transaction=this_transaction, code = transactionCode)
+        return HttpResponse(f"پرداخت با موفقیت انجام شد.<br>کد پیگری شما: {transactionCode}")
 
     # پرداخت موفق نبوده است. اگر پول کم شده است ظرف مدت ۴۸ ساعت پول به حساب شما بازخواهد گشت.
     return HttpResponse("پرداخت با شکست مواجه شده است. اگر پول کم شده است ظرف مدت ۴۸ ساعت پول به حساب شما بازخواهد گشت.")

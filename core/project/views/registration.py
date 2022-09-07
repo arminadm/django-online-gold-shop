@@ -3,11 +3,11 @@ import requests
 from django.http import Http404, HttpResponse 
 from django.shortcuts import render, redirect
 from django.views.generic import View, TemplateView
-from project.models import Profile, User
+from project.models import Profile, User, Address
 from django.contrib.auth import login, logout, authenticate
 from django.core.exceptions import ValidationError
 from django.shortcuts import get_object_or_404
-from project.models.products import ShopCart
+from project.models.products import ShopCart, Products
 # Create your views here.
 
 class IndexClassView(TemplateView):
@@ -21,11 +21,16 @@ class IndexClassView(TemplateView):
             context['user'] = self.request.user
             context['profile'] = get_object_or_404(Profile, user = self.request.user)
             shopcart = ShopCart.objects.filter(user=self.request.user)
+            shopcart_count = 0
             total_price = 0
             for item in shopcart:
                 total_price += item.product.price
+                shopcart_count += 1
             context['shopcart'] = shopcart
             context['price'] = total_price
+            context['shopcart_count'] = shopcart_count
+            last_products = Products.objects.all().order_by('created_date')[:4][::-1]
+            context['last_products'] = last_products
         api_response = {
         "18ayar": {
             "value": "1276600",
@@ -80,15 +85,28 @@ class LoginClassView(View):
 
 class ProfileClassView(View):
     def get(self, request, *args, **kwargs):
-        user = request.user
-        profile = get_object_or_404(Profile, user=user)
+        shopcart = ShopCart.objects.filter(user=request.user)
+        api_response = {
+            "18ayar": {
+                "value": "1276600",
+                "change": 9000,
+                "timestamp": 1662276596,
+                "date": "1401-06-13 11:59:56"
+                }
+        }
+        total_price = 0
+        shopcart_count = 0
+        for item in shopcart:
+            total_price += item.product.price
+            shopcart_count += 1
         context = {
-            'phone': user.phone,
-            'fname': profile.first_name,
-            'lname': profile.last_name,
-            'nationalCode': profile.national_code,
-            'date': profile.birth_date,
-            'email': profile.email
+            'shopcart': shopcart,
+            'price': total_price,
+            'shopcart_count': shopcart_count,
+            'gold_price': api_response['18ayar']['value'],
+            'user': self.request.user,
+            'profile': get_object_or_404(Profile, user = self.request.user),
+            'address': Address.objects.filter(user = get_object_or_404(Profile, user = self.request.user))
         }
         return render(request, 'panel/user-Information.html', context)
 

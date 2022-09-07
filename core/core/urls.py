@@ -19,8 +19,8 @@ from project.views import IndexClassView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('payment/',include('project.urls.payment')),
     path('products/', include('project.urls.products')),
     path('registration/', include('project.urls.registration')),
-    path('payment/', include('project.urls.payment')),
     path('', IndexClassView.as_view(), name='index')
 ]

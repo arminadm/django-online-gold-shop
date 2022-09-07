@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa">
+    {% load static %}
     <head>
         <!-- Meta Tags -->
         <meta charset="UTF-8" />
@@ -11,1467 +12,11 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
         <!-- Theme CSS -->
-        {% load static %}
         <link rel="stylesheet" href="{% static 'css/style.css' %}" />
         <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
     </head>
     <body>
-        <header>
-            <nav>
-                <a href="" class="advertisement">قیمت روز هر گرم طلا</a>
-                <div class="container">
-                    <div class="info">
-                        <div class="child">
-                            <ul>
-                                <li class="mobile-menu">
-                                    <button type="button" id="showMobileMenu">
-                                        <svg width="25" height="14" viewBox="0 0 25 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0.25 7H12.5H24.75M12.75 13H24.75M0.25 1H12.25" stroke="#3F3F3F" stroke-width="1.5" />
-                                        </svg>
-                                    </button>
-                                </li>
-                                <li class="bag">
-                                    <span class="count">۲</span>
-                                    <a href=""><img src="{% static 'images/bag.svg' %}" alt="" /></a>
-                                    <div class="sub-menu">
-                                        <div class="text-start">
-                                            <a href="">
-                                                <button class="show-bag">
-                                                    مشاهده سبد خرید
-                                                    <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                </button>
-                                            </a>
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div>
-                                                    <img src="{% static 'images/story.png' %}" alt="" />
-                                                </div>
-                                                <div>
-                                                    <h5 class="pro-title">نام محصول</h5>
-                                                    <span>قیمت محصول</span>
-                                                    <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                                    <a href="">
-                                                        <button class="btn btn-buy" type="button">
-                                                            مشاهده
-                                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                                        </button>
-                                                    </a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <hr />
-                                        <div class="final-price">
-                                            <div>
-                                                <a href="">
-                                                    <button class="btn btn-buy" type="button">
-                                                        ثبت سفارش
-                                                    </button>
-                                                </a>
-                                            </div>
-                                            <div>
-                                                <span class="price">۴۵.۰۰۰.۰۰۰ <span>تومان</span></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href=""><img src="{% static 'images/like.svg' %}" alt="" /></a>
-                                </li>
-                                <li>
-                                    <button type="button" id="search-show"><img src="{% static 'images/search.svg' %}" alt="" /></button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="child">
-                            <a href="" class="logo"><img src="{% static 'images/logo.svg' %}" alt="" /></a>
-                        </div>
-                        <div class="child">
-                            <ul>
-                                <li class="bell">
-                                    <a href="" class="main"><img src="{% static 'images/bell.svg' %}" alt="" /></a>
-                                    <div class="bell-info">
-                                        <ul>
-                                            <li><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></li>
-                                            <li><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></li>
-                                            <li><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></li>
-                                            <li><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></li>
-                                            <li><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></li>
-                                            <li><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></li>
-                                            <li><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></li>
-                                            <li><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></li>
-                                            <li><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></li>
-                                            <li><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></li>
-                                            <li><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></li>
-                                            <li><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></li>
-                                            <li><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></li>
-                                            <li><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="user">
-                                    <a href=""><img src="{% static 'images/user.svg' %}" alt="" /></a>
-                                    <div class="user-info">
-                                        <div class="flex">
-                                            <div>
-                                                <span>نام و نام خانوارگی</span>
-                                                <span>۰۹۱۲۰۰۰۰۰۰۰۰</span>
-                                            </div>
-                                            <div>
-                                                <a href="">
-                                                    <svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M21.2703 13.8025V23C21.2703 24.6569 19.9271 26 18.2703 26H4C2.34315 26 1 24.6569 1 23V9.41975C1 7.7629 2.34315 6.41975 4 6.41975H9.78378M10.7973 11.5556L13.1622 13.8025M23.8115 6.43041L14.8134 15.7125C14.3977 16.1413 13.8635 16.4363 13.2792 16.5597L12.9226 16.6349C10.7218 17.0996 8.81131 15.0666 9.41172 12.8989L9.5741 12.3126C9.71157 11.8163 9.9745 11.3637 10.3376 10.9984L19.2775 2.00475C20.3967 0.878785 22.1994 0.819753 23.3899 1.87008L23.6422 2.09268C24.9261 3.22538 25.0032 5.2011 23.8115 6.43041Z"
-                                                            stroke="#C1C1C1"
-                                                            stroke-linecap="round"
-                                                            stroke-linejoin="round"
-                                                        />
-                                                    </svg>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="buttons">
-                                            <a href=""><button class="btn btn-green" type="button">رفتن به پنل</button></a>
-                                            <a href=""><button class="btn btn-black" type="button">خروج</button></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- <li class="guest">
-                                    <ul>
-                                        <li><a href="">ورود</a></li>
-                                        <li><a href="">ثبت نام</a></li>
-                                    </ul>
-                                </li> -->
-                            </ul>
-                        </div>
-                    </div>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="" class="nav-link"><span>ویترین</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link mega-menu-toggle"><span>گالری طلا</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link mega-menu-customize-toggle"><span>شخصی سازی</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link"><span>گیفت کارت</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link"><span>بلاگ</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link"><span>داستان ما</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link"><span>تماس با ما</span></a>
-                        </li>
-                    </ul>
-                    <div class="mega-menu" id="megaMenu">
-                        <ul>
-                            <li><a class="mega-link mega-link-active" data-box="1" href="">انگشتر</a></li>
-                            <li><a class="mega-link" data-box="2" href="">گوشواره</a></li>
-                            <li><a class="mega-link" data-box="3" href="">دستبند</a></li>
-                            <li><a class="mega-link" data-box="4" href="">گردنبند</a></li>
-                            <li><a class="mega-link" data-box="5" href="">سرویس</a></li>
-                            <li><a class="mega-link" data-box="6" href="">نیم ست</a></li>
-                            <li><a class="mega-link" data-box="7" href="">کالکشن ها</a></li>
-                            <li><a class="mega-link" data-box="8" href="">برند ها</a></li>
-                            <li><a class="mega-link" data-box="9" href="">کودکان</a></li>
-                            <li><a class="mega-link" data-box="10" href="">مردانه</a></li>
-                            <li><a class="mega-link" data-box="11" href="">هدیه</a></li>
-                            <li><a class="mega-link" data-box="12" href="">روزمره</a></li>
-                            <li><a class="mega-link" data-box="13" href="">لیمیتد</a></li>
-                            <li><a class="mega-link" data-box="14" href="">عروسی</a></li>
-                            <li><a class="mega-link" data-box="1" href="">اکسسوری</a></li>
-                            <li>
-                                <a href="">
-                                    <button class="see-more">
-                                        مشاهده سبد خرید
-                                        <img src="{% static 'images/prev.svg' %}" alt="" />
-                                    </button>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="boxs">
-                            <div class="box d-block">
-                                <div class="flex">
-                                    <div class="child">
-                                        <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-                                            نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                                        </p>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="child">
-                                        <div>
-                                            <img src="{% static 'images/story-img.png' %}" alt="" />
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'images/blog.png' %}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="text-start mt-3">
-                                    <a href="">
-                                        <button class="see-more">
-                                            مشاهده سبد خرید
-                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="flex">
-                                    <div class="child">
-                                        <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-                                            نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                                        </p>
-                                        <ul>
-                                            <li><a href="">2انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">2انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">2انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="child">
-                                        <div>
-                                            <img src="{% static 'images/story-img.png' %}" alt="" />
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'images/blog.png' %}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="text-start mt-3">
-                                    <a href="">
-                                        <button class="see-more">
-                                            مشاهده سبد خرید
-                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="flex">
-                                    <div class="child">
-                                        <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-                                            نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                                        </p>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">3انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="child">
-                                        <div>
-                                            <img src="{% static 'images/story-img.png' %}" alt="" />
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'images/blog.png' %}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="text-start mt-3">
-                                    <a href="">
-                                        <button class="see-more">
-                                            مشاهده سبد خرید
-                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="flex">
-                                    <div class="child">
-                                        <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-                                            نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                                        </p>
-                                        <ul>
-                                            <li><a href="">4انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">4انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">4انگشتر</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="child">
-                                        <div>
-                                            <img src="{% static 'images/story-img.png' %}" alt="" />
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'images/blog.png' %}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="text-start mt-3">
-                                    <a href="">
-                                        <button class="see-more">
-                                            مشاهده سبد خرید
-                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="flex">
-                                    <div class="child">
-                                        <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-                                            نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                                        </p>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">5انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">5انگشتر</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="child">
-                                        <div>
-                                            <img src="{% static 'images/story-img.png' %}" alt="" />
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'images/blog.png' %}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="text-start mt-3">
-                                    <a href="">
-                                        <button class="see-more">
-                                            مشاهده سبد خرید
-                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="flex">
-                                    <div class="child">
-                                        <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-                                            نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                                        </p>
-                                        <ul>
-                                            <li><a href="">6انگشتر</a></li>
-                                            <li><a href="">6انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">6انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="child">
-                                        <div>
-                                            <img src="{% static 'images/story-img.png' %}" alt="" />
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'images/blog.png' %}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="text-start mt-3">
-                                    <a href="">
-                                        <button class="see-more">
-                                            مشاهده سبد خرید
-                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="box">
-                                <div class="flex">
-                                    <div class="child">
-                                        <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-                                            نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                                        </p>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="child">
-                                        <div>
-                                            <img src="{% static 'images/story-img.png' %}" alt="" />
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'images/blog.png' %}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="text-start mt-3">
-                                    <a href="">
-                                        <button class="see-more">
-                                            مشاهده سبد خرید
-                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="flex">
-                                    <div class="child">
-                                        <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-                                            نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                                        </p>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="child">
-                                        <div>
-                                            <img src="{% static 'images/story-img.png' %}" alt="" />
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'images/blog.png' %}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="text-start mt-3">
-                                    <a href="">
-                                        <button class="see-more">
-                                            مشاهده سبد خرید
-                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="flex">
-                                    <div class="child">
-                                        <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-                                            نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                                        </p>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="child">
-                                        <div>
-                                            <img src="{% static 'images/story-img.png' %}" alt="" />
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'images/blog.png' %}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="text-start mt-3">
-                                    <a href="">
-                                        <button class="see-more">
-                                            مشاهده سبد خرید
-                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="flex">
-                                    <div class="child">
-                                        <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-                                            نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                                        </p>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="child">
-                                        <div>
-                                            <img src="{% static 'images/story-img.png' %}" alt="" />
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'images/blog.png' %}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="text-start mt-3">
-                                    <a href="">
-                                        <button class="see-more">
-                                            مشاهده سبد خرید
-                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="flex">
-                                    <div class="child">
-                                        <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-                                            نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                                        </p>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="child">
-                                        <div>
-                                            <img src="{% static 'images/story-img.png' %}" alt="" />
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'images/blog.png' %}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="text-start mt-3">
-                                    <a href="">
-                                        <button class="see-more">
-                                            مشاهده سبد خرید
-                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="flex">
-                                    <div class="child">
-                                        <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-                                            نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                                        </p>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="child">
-                                        <div>
-                                            <img src="{% static 'images/story-img.png' %}" alt="" />
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'images/blog.png' %}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="text-start mt-3">
-                                    <a href="">
-                                        <button class="see-more">
-                                            مشاهده سبد خرید
-                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="flex">
-                                    <div class="child">
-                                        <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-                                            نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                                        </p>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="child">
-                                        <div>
-                                            <img src="{% static 'images/story-img.png' %}" alt="" />
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'images/blog.png' %}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="text-start mt-3">
-                                    <a href="">
-                                        <button class="see-more">
-                                            مشاهده سبد خرید
-                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="box">
-                                <div class="flex">
-                                    <div class="child">
-                                        <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-                                            نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                                        </p>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="child">
-                                        <div>
-                                            <img src="{% static 'images/story-img.png' %}" alt="" />
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'images/blog.png' %}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="text-start mt-3">
-                                    <a href="">
-                                        <button class="see-more">
-                                            مشاهده سبد خرید
-                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="flex">
-                                    <div class="child">
-                                        <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-                                            نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                                        </p>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="child">
-                                        <div>
-                                            <img src="{% static 'images/story-img.png' %}" alt="" />
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'images/blog.png' %}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="text-start mt-3">
-                                    <a href="">
-                                        <button class="see-more">
-                                            مشاهده سبد خرید
-                                            <img src="{% static 'images/prev.svg' %}" alt="" />
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mega-menu2" id="megaMenu2">
-                        <ul>
-                            <li><a class="mega-link mega-link-active" data-box="1" href="">شخصی سازی کنید</a></li>
-                            <li><a class="mega-link" data-box="2" href="">راهنمای سایز</a></li>
-                        </ul>
-                        <div class="boxs">
-                            <div class="box d-block">
-                                <div class="flex">
-                                    <div class="child">
-                                        <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-                                            نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                                        </p>
-                                        <a href="">
-                                            <button type="submit">
-                                                رفتن به صفحه
-                                                <svg width="10" height="23" viewBox="0 0 10 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path opacity="0.68" d="M9.60999 0L0 10.72L9.60999 22.43L4.79999 11.22L9.60999 0Z" fill="#90A08C" />
-                                                </svg>
-                                            </button>
-                                        </a>
-                                    </div>
-                                    <div class="child">
-                                        <div>
-                                            <img src="{% static 'images/story-img.png' %}" alt="" />
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'images/blog.png' %}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <div class="flex">
-                                    <div class="child">
-                                        <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
-                                            2نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                                        </p>
-                                        <a href="">
-                                            <button type="submit">
-                                                رفتن به صفحه
-                                                <svg width="10" height="23" viewBox="0 0 10 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path opacity="0.68" d="M9.60999 0L0 10.72L9.60999 22.43L4.79999 11.22L9.60999 0Z" fill="#90A08C" />
-                                                </svg>
-                                            </button>
-                                        </a>
-                                    </div>
-                                    <div class="child">
-                                        <div>
-                                            <img src="{% static 'images/story-img.png' %}" alt="" />
-                                        </div>
-                                        <div>
-                                            <img src="{% static 'images/blog.png' %}" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-            <div class="search-box" id="searchBox">
-                <button type="button" id="close-search"><img src="{% static 'images/close.svg' %}" alt="" /></button>
-                <div class="container">
-                    <div class="parent">
-                        <div class="input-group mb-3">
-                            <img src="{% static 'images/search-icon.svg' %}" alt="" />
-                            <input type="text" class="form-control" placeholder="" />
-                            <button class="btn btn-outline-secondary" type="button">جستجو</button>
-                        </div>
-                        <ul>
-                            <li>
-                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
-                                <div>
-                                    <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
-                                    <span> طلا/ سواروسکی</span>
-                                </div>
-                            </li>
-                            <li>
-                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
-                                <div>
-                                    <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
-                                    <span> طلا/ سواروسکی</span>
-                                </div>
-                            </li>
-                            <li>
-                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
-                                <div>
-                                    <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
-                                    <span> طلا/ سواروسکی</span>
-                                </div>
-                            </li>
-                            <li>
-                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
-                                <div>
-                                    <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
-                                    <span> طلا/ سواروسکی</span>
-                                </div>
-                            </li>
-                            <li>
-                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
-                                <div>
-                                    <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
-                                    <span> طلا/ سواروسکی</span>
-                                </div>
-                            </li>
-                            <li>
-                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
-                                <div>
-                                    <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
-                                    <span> طلا/ سواروسکی</span>
-                                </div>
-                            </li>
-                            <li>
-                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
-                                <div>
-                                    <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
-                                    <span> طلا/ سواروسکی</span>
-                                </div>
-                            </li>
-                            <li>
-                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
-                                <div>
-                                    <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
-                                    <span> طلا/ سواروسکی</span>
-                                </div>
-                            </li>
-                            <li>
-                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
-                                <div>
-                                    <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
-                                    <span> طلا/ سواروسکی</span>
-                                </div>
-                            </li>
-                            <li>
-                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
-                                <div>
-                                    <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
-                                    <span> طلا/ سواروسکی</span>
-                                </div>
-                            </li>
-                            <li>
-                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
-                                <div>
-                                    <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
-                                    <span> طلا/ سواروسکی</span>
-                                </div>
-                            </li>
-                            <li>
-                                <a href=""><img src="{% static 'images/detail.png' %}" alt="" /></a>
-                                <div>
-                                    <h4><a href="">لورم ایپسوم متن ساختگی با تولید سادگیر</a></h4>
-                                    <span> طلا/ سواروسکی</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="mobile-content-menu d-none" id="mobileMenu">
-                <div class="container">
-                    <div class="flex">
-                        <div>
-                            <button class="button">
-                                <svg width="50" height="48" viewBox="0 0 50 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="50" height="48" rx="7" fill="#90A08C" />
-                                    <path
-                                        d="M34.203 23.1015C34.203 17.5226 29.6803 13 24.1014 13C18.5225 13 14 17.5226 14 23.1015C14 28.6804 18.5225 33.2029 24.1014 33.2029C29.6803 33.2029 34.203 28.6804 34.203 23.1015Z"
-                                        stroke="white"
-                                        stroke-width="1.5"
-                                        stroke-miterlimit="10"
-                                    />
-                                    <path d="M29.7467 30.7627L34.3605 35.3764" stroke="white" stroke-width="1.5" stroke-miterlimit="10" />
-                                </svg>
-                            </button>
-                        </div>
-                        <div>
-                            <input type="text" />
-                        </div>
-                        <div>
-                            <button type="button" id="closeMobileMenu">
-                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 1L20 20M1 20L20 1" stroke="#3F3F3F" stroke-width="1.5" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="main-box">
-                        <ul class="category">
-                            <li class="active" data-box-num="1">ویترین</li>
-                            <li data-box-num="2">گالری طلا</li>
-                            <li data-box-num="3">شخصی سازی</li>
-                            <li data-box-num="4">گیفت کارت</li>
-                            <li data-box-num="5">بلاگ</li>
-                            <li data-box-num="6">تماس با ما</li>
-                            <li data-box-num="7">داستان ما</li>
-                        </ul>
-                        <div class="boxs">
-                            <div class="box d-block">
-                                <ul>
-                                    <li class="accordion">
-                                        <span>1انگشتر</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>1گوشواره</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>1دستبند</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>1گردنبند</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>1سرویس</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>1نیم ست</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="box">
-                                <ul>
-                                    <li class="accordion">
-                                        <span>2انگشتر</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>2گوشواره</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>2دستبند</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>2گردنبند</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>2سرویس</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>2نیم ست</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="box">
-                                <ul>
-                                    <li class="accordion">
-                                        <span>3انگشتر</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>3گوشواره</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>3دستبند</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>3گردنبند</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>3سرویس</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>3نیم ست</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="box">
-                                <ul>
-                                    <li class="accordion">
-                                        <span>4انگشتر</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>4گوشواره</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>4دستبند</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>4گردنبند</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>4سرویس</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>4نیم ست</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="box">
-                                <ul>
-                                    <li class="accordion">
-                                        <span>5انگشتر</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>5گوشواره</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>5دستبند</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>5گردنبند</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>5سرویس</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>5نیم ست</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="box">
-                                <ul>
-                                    <li class="accordion">
-                                        <span>6انگشتر</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>6گوشواره</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>6دستبند</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>6گردنبند</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>6سرویس</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>6نیم ست</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="box">
-                                <ul>
-                                    <li class="accordion">
-                                        <span>7انگشتر</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>7گوشواره</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>7دستبند</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>7گردنبند</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>7سرویس</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion">
-                                        <span>7نیم ست</span>
-                                        <ul>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                            <li><a href="">انگشتر</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+        {% include 'header.html' %}
         <main class="panel">
             <section>
                 <div class="top-panel-details">
@@ -1481,13 +26,13 @@
                                 <div class="user-info">
                                     <div>
                                         <h4 class="user-name">
-                                            نام و نام خانوارگی
+                                           {{ profile.first_name  }} {{ profile.last_name }}
                                         </h4>
-                                        <span class="phone-number">۰۹۱۲۰۰۰۰۰۰۰۰</span>
+                                        <span class="phone-number">{{ user.phone }}</span>
                                     </div>
                                     <div>
                                         <button class="edit" type="button">
-                                            <svg width="40" height="42" viewBox="0 0 40 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <svg width="30" height="30" viewBox="0 0 40 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path
                                                     d="M32.6216 21.7654V38C32.6216 39.6569 31.2785 41 29.6216 41H4C2.34314 41 1 39.6569 1 38V13.1235C1 11.4666 2.34315 10.1235 4 10.1235H14.7027M16.2838 18.2222L19.973 21.7654M37.847 8.82531L22.1919 25.1497C21.7762 25.5831 21.2401 25.8818 20.6528 26.0072L16.8902 26.8102C14.6912 27.2796 12.7765 25.2522 13.3707 23.0835L14.4962 18.9758C14.6316 18.4817 14.8913 18.0304 15.2505 17.6651L30.6182 2.03728C31.7401 0.896419 33.5599 0.836794 34.7541 1.90177L37.6785 4.50988C38.9468 5.64099 39.0232 7.59876 37.847 8.82531Z"
                                                     stroke="#C1C1C1"
@@ -1587,61 +132,69 @@
                             <aside class="col-xxl-2 col-lg-3 d-none d-lg-block">
                                 <ul class="panel-menu">
                                     <li>
-                                        <a href="">
+                                        <a href="/registration/profile/">
                                             <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect width="42" height="42" fill="#D9D9D9" />
                                             </svg>
                                             اطلاعات شخصی
                                         </a>
+                                        <!-- <div class="resposive-arrow"></div> -->
+                                        <!-- <div class="arrow"><img src="{% static 'images/arrow-left.svg' %}    " alt="" /></div> -->
                                     </li>
                                     <li class="active-panel-menu">
-                                        <a href="">
+                                        <a href="/products/address/">
                                             <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect width="42" height="42" fill="#D9D9D9" />
                                             </svg>
                                             آدرس ها
                                         </a>
-                                        <div class="arrow"><img src="{% static 'images/arrow-left.svg' %}    " alt="" /></div>
+                                        <div class="resposive-arrow"></div>
+                                        <img src="{% static 'images/panel-arrow.svg' %}" alt="" class="resposive-arrow" />
                                     </li>
                                     <li>
-                                        <a href="">
+                                        <a href="/products/shopcart/">
                                             <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect width="42" height="42" fill="#D9D9D9" />
                                             </svg>
                                             سبد خرید
                                         </a>
+                                        <img src="{% static 'images/panel-arrow.svg' %}" alt="" class="resposive-arrow" />
                                     </li>
-                                    <li>
+                                    <li>disabled
                                         <a href="">
                                             <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect width="42" height="42" fill="#D9D9D9" />
                                             </svg>
                                             لیست خرید
                                         </a>
+                                        <img src="{% static 'images/panel-arrow.svg' %}" alt="" class="resposive-arrow" />
                                     </li>
-                                    <li>
+                                    <li>disabled
                                         <a href="">
                                             <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect width="42" height="42" fill="#D9D9D9" />
                                             </svg>
                                             سفارش ها
                                         </a>
+                                        <img src="{% static 'images/panel-arrow.svg' %}" alt="" class="resposive-arrow" />
                                     </li>
-                                    <li>
+                                    <li>disabled
                                         <a href="">
                                             <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect width="42" height="42" fill="#D9D9D9" />
                                             </svg>
                                             کلوب مشتریان
                                         </a>
+                                        <img src="{% static 'images/panel-arrow.svg' %}" alt="" class="resposive-arrow" />
                                     </li>
                                     <li>
-                                        <a href="">
+                                        <a href="/registration/logout/">
                                             <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect width="42" height="42" fill="#D9D9D9" />
                                             </svg>
                                             خروج
                                         </a>
+                                        <img src="{% static 'images/panel-arrow.svg' %}" alt="" class="resposive-arrow" />
                                     </li>
                                 </ul>
                             </aside>
@@ -1667,23 +220,25 @@
                                                     </div>
                                                     <div class="child">
                                                         <span class="d-block address-info">شماره تلفن</span>
-                                                        <span> {{ item.profileAddress.profileUser.phone }}</span>
+                                                        <span> {{ user.phone }}</span>
                                                     </div>
                                                     <div class="child">
                                                         <span class="d-block address-info">نام و نام خانوادگی</span>
-                                                        <span>{{ item.profileAddress.first_name }} - {{ address.profileAddress.last_name }}</span>
+                                                        <span>{{ profile.first_name }} - {{ profile.last_name }}</span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-3">
                                                 <div class="del-address">
-                                                    <button>
+                                                    <!-- <button>
                                                         <img src="{% static 'images/pen.svg' %}" alt="" class="add-address-img" />
-                                                    </button>
-                                                    <button class="d-flex align-items-center">
+                                                    </button> -->
+                                                        <form action="/products/address/delete/{{ item.id }}/" method="post"> {% csrf_token %}
+                                                    <button class="d-flex align-items-center" type="submit">
                                                         <img src="{% static 'images/delete-icon.svg' %}" alt="" />
                                                         <span>حذف آدرس</span>
                                                     </button>
+                                                </form>
                                                 </div>
                                             </div>
                                             {% endfor %}
@@ -1695,25 +250,26 @@
                                             </div>
                                         </div>
                                         <div class="d-none new-address">
+                                            <form action="/products/address/" method="post"> {% csrf_token %}
                                             <div class="row">
                                                 <div class="col-lg-8 col-xl-7 order-lg-1 order-2">
                                                     <div class="parrent">
                                                         <div class="child">
                                                             <div class="input-group mb-3">
-                                                                <input type="text" class="form-control" placeholder="استان" aria-label="Username" aria-describedby="basic-addon1" />
+                                                                <input type="text" class="form-control" placeholder="استان" name="state" aria-label="Username" aria-describedby="basic-addon1" />
                                                             </div>
                                                         </div>
                                                         <div class="child">
                                                             <div class="input-group mb-3">
-                                                                <input type="text" class="form-control" placeholder="شهر" aria-label="Username" aria-describedby="basic-addon1" />
+                                                                <input type="text" class="form-control" placeholder="شهر" name="city" aria-label="Username" aria-describedby="basic-addon1" />
                                                             </div>
                                                         </div>
                                                         <div class="child">
                                                             <div class="input-group mb-3">
-                                                                <input type="text" class="form-control" placeholder="کدپستی" aria-label="Username" aria-describedby="basic-addon1" />
+                                                                <input type="text" class="form-control" placeholder="کدپستی" name="zip_code" aria-label="Username" aria-describedby="basic-addon1" />
                                                             </div>
                                                         </div>
-                                                        <div class="child">
+                                                        <!-- <div class="child">
                                                             <div class="input-group mb-3">
                                                                 <input type="text" class="form-control" placeholder="بلوک" aria-label="Username" aria-describedby="basic-addon1" />
                                                             </div>
@@ -1727,25 +283,25 @@
                                                             <div class="input-group mb-3">
                                                                 <input type="text" class="form-control" placeholder="شماره ثابت" aria-label="Username" aria-describedby="basic-addon1" />
                                                             </div>
-                                                        </div>
+                                                        </div> -->
                                                         <div class="child">
-                                                            <div class="form-group">
-                                                                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="آدرس" rows="3"></textarea>
+                                                            <div class="input-group mb-1">
+                                                                <textarea class="form-control" id="exampleFormControlTextarea1" name="address" placeholder="آدرس" rows="3"></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-4 col-xl-5 order-lg-1 order-1 text-center">
+                                                <!-- <div class="col-lg-4 col-xl-5 order-lg-1 order-1 text-center">
                                                     <iframe
                                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.7398509007853!2d49.50498834737716!3d37.47136494055847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x401fea2b6f724549%3A0x6b1ee16b94c56126!2sNaz-e+Khazar+Hotel!5e0!3m2!1sen!2s!4v1546191183344"
                                                     allowfullscreen=""
                                                     frameborder="0"
                                                 ></iframe>
                                                     <span class="map-info">لورم ایپسوم متن ساختگی با تولید سادگیر</span>
-                                                </div>
+                                                </div> -->
                                             </div>
-                                            <div class="row">
-                                                <div class="input-group check-input accept-rule">
+                                            <!--<div class="row">
+                                                 <div class="input-group check-input accept-rule">
                                                     <div class="input-group-text">
                                                         <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" />
                                                     </div>
@@ -1806,12 +362,13 @@
                                                             />
                                                         </svg>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <div class="text-start">
-                                                    <button class="panel-btn text-start" id="confrimAddressBtn" type="button">ذخیره تغیرات</button>
+                                                    <button class="panel-btn text-start" id="confrimAddressBtn" type="submit">ذخیره تغیرات</button>
                                                     <hr />
                                                 </div>
                                             </div>
+                                        </form>
                                         </div>
                                     </div>
                                 </div>
@@ -2090,6 +647,7 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
         <script src="{% static 'js/main.js' %}"></script>
+        {% block js %}{% endblock %}
         <!-- /scripts -->
     </body>
 </html>
